@@ -1,0 +1,13 @@
+//
+//	MIXINS
+// ------------------------------------------------------
+
+@function em($size, $context: 16) {
+    @return ($size / $context) + em;
+}
+
+@mixin rounded($radius: em(6)) {
+    @if ($enable-rounded) {
+        border-radius: $radius;
+    }
+}
