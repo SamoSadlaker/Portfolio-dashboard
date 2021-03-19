@@ -1,9 +1,9 @@
-<main id="Login">
+<main id="Register">
 
   <div class="container">
     <div class="head">
       <img src="assets/img/logo.svg" alt="Logo">
-      <h1>Login page</h1>
+      <h1>Register page</h1>
     </div>
     <form action="">
 
@@ -15,14 +15,14 @@
       <div class="line">
         <label for="password">Password</label>
         <input type="password" name="password" id="password" required placeholder="your password">
-        <i class='bx bxs-low-vision'></i>
+        <p></p>
       </div>
 
       <button type="submit">Login</button>
 
     </form>
 
-    <p>If you don't have account, create one.  <a href="/register">Register here</a></p>
+    <p>If you have account, just login.  <a href="/login">Login here</a></p>
 
   </div>
 
