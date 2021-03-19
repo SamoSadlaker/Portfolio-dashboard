@@ -2,19 +2,36 @@
 
 class RoutingController
 {
-    public function routing($url)
+    public function getPage()
     {
-        require_once APP_ROOT . "settings.php";
-        if (empty($url)) {
-            require_once APP_ROOT . "pages" . DIRECTORY_SEPARATOR . "#default.php";
+        if (empty($_GET['url'])) {
+            $url = "index";
+        } else {
+            $url = $_GET['url'];
         }
 
         if (in_array($url, ["index", "chat", "ticket", "settings"])) {
-            require_once APP_ROOT . "pages" . DIRECTORY_SEPARATOR . $url . ".php";
+            $routing = $this;
+            $page = $url;
+            require_once APP_ROOT . "pages" . DIRECTORY_SEPARATOR . "_layout.php";
         } else {
-            require_once APP_ROOT . "pages" . DIRECTORY_SEPARATOR . "#" . $url . ".php";
+            if (file_exists(APP_ROOT . "pages" . DIRECTORY_SEPARATOR . "#" . $url . ".php")) {
+                require_once APP_ROOT . "pages" . DIRECTORY_SEPARATOR . "#" . $url . ".php";
+            } else {
+                $this->redirect("/");
+            }
         }
+    }
 
-        require_once APP_ROOT . "pages" . DIRECTORY_SEPARATOR . "#default.php";
+    public function getContent($page)
+    {
+        if (file_exists(APP_ROOT . "pages" . DIRECTORY_SEPARATOR . $page . ".php")) {
+            require_once APP_ROOT . "pages" . DIRECTORY_SEPARATOR . $page . ".php";
+        }
+    }
+
+    public function redirect($url)
+    {
+        header("Location: " . $url);
     }
 }

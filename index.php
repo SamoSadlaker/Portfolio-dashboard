@@ -8,8 +8,6 @@ require_once APP_ROOT . "controllers" . DIRECTORY_SEPARATOR . "RoutingController
 
 $routing = new RoutingController();
 
-if (empty($_GET['url'])) {
-    $_GET['url'] = "index";
-}
 
-$routing->routing($_GET['url']);
+
+require_once APP_ROOT . "pages" . DIRECTORY_SEPARATOR . "#default.php";

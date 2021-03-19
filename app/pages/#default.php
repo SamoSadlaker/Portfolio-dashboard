@@ -8,5 +8,7 @@
 </head>
 <body>
   
+  <?php $routing->getPage() ?>
+
 </body>
 </html>
