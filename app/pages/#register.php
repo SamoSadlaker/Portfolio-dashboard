@@ -7,6 +7,18 @@
     </div>
     <form action="">
 
+      <div class="row">
+        <div class="col">
+          <label for="name">Name</label>
+          <input type="test" name="name" id="name" required placeholder="your name">
+        </div>
+        <div class="col">
+          <label for="lastname">Lastname</label>
+          <input type="text" name="lastname" id="lastname" required placeholder="your lastname">
+        </div>
+
+      </div>
+
       <div class="line">
         <label for="email">Email</label>
         <input type="email" name="email" id="email" required placeholder="your email">
@@ -15,10 +27,10 @@
       <div class="line">
         <label for="password">Password</label>
         <input type="password" name="password" id="password" required placeholder="your password">
-        <p></p>
+        <i class='bx bxs-low-vision'></i>
       </div>
 
-      <button type="submit">Login</button>
+      <button type="submit">Register</button>
 
     </form>
 
