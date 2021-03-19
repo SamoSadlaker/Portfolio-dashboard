@@ -30,6 +30,16 @@ class RoutingController
         }
     }
 
+    public function getPageName()
+    {
+        if (empty($_GET['url'])) {
+            $name = "Home";
+        } else {
+            $name = $_GET['url'];
+        }
+        return ucfirst($name);
+    }
+
     public function redirect($url)
     {
         header("Location: " . $url);
