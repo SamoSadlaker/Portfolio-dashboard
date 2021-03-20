@@ -14,6 +14,22 @@ html {
   padding: 0;
 }
 
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #2f2f2f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #151515;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #181818;
+}
+
 body {
   -webkit-font-smoothing: antialiased;
   font-size: 100%;
@@ -21,12 +37,116 @@ body {
   font-weight: 400;
   width: 100%;
   height: 100vh;
-  max-height: 100vh;
+  min-height: 100vh;
 }
 
 a {
   text-decoration: none;
   color: #f1f1f1;
+}
+
+#Main {
+  width: 100%;
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 17.5em calc(100% - 17.5em);
+      grid-template-columns: 17.5em calc(100% - 17.5em);
+  -ms-grid-rows: 2.5em 100vh 2.1875em;
+      grid-template-rows: 2.5em 100vh 2.1875em;
+      grid-template-areas: "sidebar navbar" "sidebar content" "sidebar footer";
+}
+
+main {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: content;
+}
+
+.navbar {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: navbar;
+  width: 100%;
+  height: 2.5em;
+  background-color: #0f445d;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 1em;
+}
+
+.navbar .logo img {
+  height: calc(2.5em - 10px);
+  width: auto;
+}
+
+.navbar .info span {
+  margin: 0 0.5em;
+  color: #e4e4e4;
+}
+
+.navbar .logout {
+  color: #e4e4e4;
+  border-radius: 0.3125em;
+  padding: 0.4em 0.6em;
+  background-color: #0b3447;
+}
+
+.sidebar {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 1;
+  grid-area: sidebar;
+  min-height: 100vh;
+  width: 17.5em;
+  background-color: #1d84b5;
+}
+
+footer {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: footer;
+  width: 100%;
+  height: 2.1875em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  background-color: #0b0a07;
+}
+
+footer p,
+footer a {
+  color: #e4e4e4;
+}
+
+footer a {
+  -webkit-transition: color 0.25s;
+  transition: color 0.25s;
+}
+
+footer a:hover {
+  color: #1d84b5;
 }
 
 #Login {

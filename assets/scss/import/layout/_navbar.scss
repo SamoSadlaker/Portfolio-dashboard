@@ -1,0 +1,30 @@
+.navbar {
+    grid-area: navbar;
+    width: 100%;
+    height: $navbar-height;
+    background-color: darken($color-secondary, 20);
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1em;
+
+    .logo img {
+        height: calc(#{$navbar-height} - 10px);
+        width: auto;
+    }
+
+    .info {
+        span {
+            margin: 0 0.5em;
+            color: darken($color-text-light, 5);
+        }
+    }
+    .logout {
+        color: darken($color-text-light, 5);
+        @include rounded(em(5));
+        padding: 0.4em 0.6em;
+        background-color: darken($color-secondary, 25);
+    }
+}

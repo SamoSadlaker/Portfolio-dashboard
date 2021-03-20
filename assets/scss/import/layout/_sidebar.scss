@@ -1,0 +1,6 @@
+.sidebar {
+    grid-area: sidebar;
+    min-height: 100vh;
+    width: $sidebar-width;
+    background-color: $color-secondary;
+}

@@ -1,4 +1,7 @@
 <?php
+
+date_default_timezone_set("Europe/Bratislava");
+
 define("ROOT", __DIR__ . DIRECTORY_SEPARATOR);
 define("APP_ROOT", __DIR__ . DIRECTORY_SEPARATOR . "app" . DIRECTORY_SEPARATOR);
 
