@@ -1,4 +1,41 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Ubuntu:wght@500&display=swap");
+@-webkit-keyframes sidebarSlideIn {
+  0% {
+    width: 17.5em;
+  }
+  100% {
+    width: 3.75em;
+  }
+}
+@keyframes sidebarSlideIn {
+  0% {
+    width: 17.5em;
+  }
+  100% {
+    width: 3.75em;
+  }
+}
+
+@-webkit-keyframes mainSlideIn {
+  0% {
+    grid-template-columns: 17.5em calc(100% - 17.5em);
+  }
+  100% {
+    grid-template-columns: 3.75em calc( 100% - 3.75em) !important;
+  }
+}
+
+@keyframes mainSlideIn {
+  0% {
+    -ms-grid-columns: 17.5em calc(100% - 17.5em);
+        grid-template-columns: 17.5em calc(100% - 17.5em);
+  }
+  100% {
+    -ms-grid-columns: 3.75em calc( 100% - 3.75em) !important;
+        grid-template-columns: 3.75em calc( 100% - 3.75em) !important;
+  }
+}
+
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -110,6 +147,7 @@ main {
   -ms-grid-row-span: 3;
   -ms-grid-column: 1;
   grid-area: sidebar;
+  position: relative;
   min-height: 100vh;
   width: 17.5em;
   background-color: #1d84b5;
@@ -124,6 +162,16 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.sidebar .menu {
+  position: absolute;
+  right: 1.5em;
+  top: 1em;
+  color: #f1f1f1;
+  -webkit-transform: translate(-50% -50%);
+          transform: translate(-50% -50%);
+  font-size: 1.4em;
 }
 
 .sidebar .container {
@@ -164,6 +212,37 @@ main {
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 50%;
+}
+
+.sidebar .container .head .name {
+  margin-top: 0.6em;
+  color: #e4e4e4;
+  font-size: 1.2em;
+}
+
+.sidebar .container .head span {
+  margin-top: 0.5em;
+  font-size: 0.9em;
+}
+
+.sidebar .container .head span::before {
+  content: "(";
+}
+
+.sidebar .container .head span::after {
+  content: ")";
+}
+
+.sidebar .container .head p {
+  margin-top: 0.4em;
+  padding: 0.3em 0.6em;
+  background-color: #30a828;
+  color: #f1f1f1;
+  border-radius: 0.625em;
+}
+
+.sidebar .container .head p i {
+  vertical-align: middle;
 }
 
 .sidebar .container .sidebar-list {
@@ -258,6 +337,80 @@ main {
 
 .sidebar .container .foot a:hover {
   background-color: #166489;
+}
+
+.mini {
+  width: 3.75em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-animation: sidebarSlideIn 0.4s;
+          animation: sidebarSlideIn 0.4s;
+}
+
+.mini .menu {
+  left: 30%;
+}
+
+.mini .container .head .profile {
+  width: 50px;
+  height: 50px;
+}
+
+.mini .container .head .name {
+  display: none;
+}
+
+.mini .container .head span {
+  display: none;
+}
+
+.mini .container .head p span {
+  display: none;
+}
+
+.mini .container .sidebar-list .sidebar-item .sidebar-link span {
+  display: none;
+}
+
+.mini .container .foot {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.mini .container .foot .settings {
+  width: 100%;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 0;
+  padding: 0.4em 0;
+}
+
+.mini .container .foot .logout {
+  width: 100%;
+  padding: 1em 0;
+  text-align: center;
+  border-radius: 0;
+  font-size: 0.95em;
+}
+
+.max {
+  -webkit-animation: mainSlideIn 0.4s;
+          animation: mainSlideIn 0.4s;
+  -ms-grid-columns: 3.75em calc( 100% - 3.75em) !important;
+      grid-template-columns: 3.75em calc( 100% - 3.75em) !important;
 }
 
 footer {

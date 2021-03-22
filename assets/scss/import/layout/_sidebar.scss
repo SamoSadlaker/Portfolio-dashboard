@@ -1,5 +1,6 @@
 .sidebar {
     grid-area: sidebar;
+    position: relative;
     min-height: 100vh;
     width: $sidebar-width;
     background-color: $color-secondary;
@@ -8,6 +9,17 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    .menu {
+        position: absolute;
+        right: 1.5em;
+        top: 1em;
+        color: $color-text-light;
+        transform: translate(-50% -50%);
+        font: {
+            size: 1.4em;
+        }
+    }
 
     .container {
         width: 100%;
@@ -28,6 +40,35 @@
                 height: 100px;
                 object-fit: cover;
                 border-radius: 50%;
+            }
+            .name {
+                margin-top: 0.6em;
+                color: darken($color-text-light, 5);
+                font: {
+                    size: 1.2em;
+                }
+            }
+            span {
+                margin-top: 0.5em;
+                font: {
+                    size: 0.9em;
+                }
+                &::before {
+                    content: "(";
+                }
+                &::after {
+                    content: ")";
+                }
+            }
+            p {
+                margin-top: 0.4em;
+                padding: 0.3em 0.6em;
+                background-color: #30a828;
+                color: $color-text-light;
+                @include rounded(em(10));
+                i {
+                    vertical-align: middle;
+                }
             }
         }
 
@@ -90,4 +131,71 @@
             }
         }
     }
+}
+.mini {
+    width: $sidebar-small-width;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: sidebarSlideIn 0.4s;
+    .menu {
+        left: 30%;
+    }
+
+    .container {
+        .head {
+            .profile {
+                width: 50px;
+                height: 50px;
+            }
+            .name {
+                display: none;
+            }
+            span {
+                display: none;
+            }
+
+            p {
+                span {
+                    display: none;
+                }
+            }
+        }
+
+        .sidebar-list {
+            .sidebar-item {
+                .sidebar-link {
+                    span {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .foot {
+            display: flex;
+            flex-direction: column;
+            .settings {
+                width: 100%;
+                text-align: center;
+                vertical-align: middle;
+                border-radius: 0;
+                padding: 0.4em 0;
+            }
+
+            .logout {
+                width: 100%;
+                padding: 1em 0;
+                text-align: center;
+                border-radius: 0;
+                font-size: 0.95em;
+            }
+        }
+    }
+}
+.max {
+    animation: mainSlideIn 0.4s;
+    grid-template-columns: $sidebar-small-width calc(
+            100% - #{$sidebar-small-width}
+        ) !important;
 }

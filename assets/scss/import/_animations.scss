@@ -1,0 +1,18 @@
+@keyframes sidebarSlideIn {
+    0% {
+        width: $sidebar-width;
+    }
+    100% {
+        width: $sidebar-small-width;
+    }
+}
+@keyframes mainSlideIn {
+    0% {
+        grid-template-columns: $sidebar-width calc(100% - #{$sidebar-width});
+    }
+    100% {
+        grid-template-columns: $sidebar-small-width calc(
+                100% - #{$sidebar-small-width}
+            ) !important;
+    }
+}
