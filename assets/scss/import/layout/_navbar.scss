@@ -26,5 +26,6 @@
         @include rounded(em(5));
         padding: 0.4em 0.6em;
         background-color: darken($color-secondary, 25);
+        transform: translate(-50% -50%);
     }
 }
