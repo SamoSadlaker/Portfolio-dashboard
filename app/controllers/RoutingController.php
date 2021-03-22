@@ -10,7 +10,8 @@ class RoutingController
             $url = $_GET['url'];
         }
 
-        if (in_array($url, ["index", "chat", "ticket", "settings", "orders", "invoices", "users", "todo"])) {
+        require APP_ROOT . "settings.php";
+        if (in_array($url, $pages)) {
             $routing = $this;
             $page = $url;
             require_once APP_ROOT . "pages" . DIRECTORY_SEPARATOR . "_layout.php";
