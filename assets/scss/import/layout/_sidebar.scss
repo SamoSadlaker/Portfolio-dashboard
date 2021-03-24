@@ -5,7 +5,7 @@
     width: $sidebar-width;
     background-color: $color-secondary;
     padding: 1em 0;
-
+    transition: width $animation-speed ease-in-out;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -137,7 +137,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    animation: sidebarSlideIn 0.4s;
+    transition: width $animation-speed ease-in-out;
     .menu {
         left: 30%;
     }
@@ -194,7 +194,7 @@
     }
 }
 .max {
-    animation: mainSlideIn 0.4s;
+    transition: $animation-speed;
     grid-template-columns: $sidebar-small-width calc(
             100% - #{$sidebar-small-width}
         ) !important;

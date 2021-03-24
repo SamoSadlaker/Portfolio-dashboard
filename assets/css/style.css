@@ -87,6 +87,8 @@ a {
   height: 100%;
   display: -ms-grid;
   display: grid;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
   -ms-grid-columns: 17.5em calc(100% - 17.5em);
       grid-template-columns: 17.5em calc(100% - 17.5em);
   -ms-grid-rows: 2.5em 100vh 2.1875em;
@@ -158,6 +160,8 @@ main {
   width: 17.5em;
   background-color: #1d84b5;
   padding: 1em 0;
+  -webkit-transition: width 0.25s ease-in-out;
+  transition: width 0.25s ease-in-out;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -357,8 +361,8 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-animation: sidebarSlideIn 0.4s;
-          animation: sidebarSlideIn 0.4s;
+  -webkit-transition: width 0.25s ease-in-out;
+  transition: width 0.25s ease-in-out;
 }
 
 .mini .menu {
@@ -413,8 +417,8 @@ main {
 }
 
 .max {
-  -webkit-animation: mainSlideIn 0.4s;
-          animation: mainSlideIn 0.4s;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
   -ms-grid-columns: 3.75em calc( 100% - 3.75em) !important;
       grid-template-columns: 3.75em calc( 100% - 3.75em) !important;
 }
