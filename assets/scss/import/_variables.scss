@@ -19,3 +19,9 @@ $navbar-height: em(40);
 $sidebar-width: em(280);
 $sidebar-small-width: em(60);
 $footer-height: em(35);
+
+$alert-colors: (
+    "default": #545766,
+    "error": #fd685b,
+    "success": #28a745,
+);

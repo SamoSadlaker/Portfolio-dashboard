@@ -1,0 +1,45 @@
+%alert {
+    position: fixed;
+    padding: 0.8em 1em;
+
+    @include rounded(em(8));
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    bottom: 2em;
+    right: 0.8em;
+    min-width: 5em;
+    min-height: 2em;
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
+    color: $color-text-light;
+    animation: alert 0.8s ease-in-out;
+
+    i {
+        animation: fadeIn ease 1s;
+        margin-right: 0.2em;
+        font-size: 1.4em;
+    }
+}
+@keyframes alert {
+    0% {
+        right: -10em;
+    }
+    100% {
+        right: 0.8em;
+    }
+}
+
+@each $alert, $color in $alert-colors {
+    .alert-#{$alert} {
+        @extend %alert;
+        background-color: rgba($color, 1);
+    }
+    @media (max-width: 700px) {
+        .alert-#{$alert} {
+            bottom: 5em;
+            padding: 0.8em;
+        }
+    }
+}
