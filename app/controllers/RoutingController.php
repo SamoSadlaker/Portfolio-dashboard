@@ -14,9 +14,17 @@ class RoutingController
         if (in_array($url, $pages)) {
             $routing = $this;
             $page = $url;
+            $database = new DatabaseController();
+            $auth = new AuthController();
+            $data = new DataController();
             require_once APP_ROOT . "pages" . DIRECTORY_SEPARATOR . "_layout.php";
         } else {
             if (file_exists(APP_ROOT . "pages" . DIRECTORY_SEPARATOR . "#" . $url . ".php")) {
+                $routing = $this;
+                $page = $url;
+                $database = new DatabaseController();
+                $auth = new AuthController();
+                $data = new DataController();
                 require_once APP_ROOT . "pages" . DIRECTORY_SEPARATOR . "#" . $url . ".php";
             } else {
                 $this->redirect("/");

@@ -1,1 +1,3 @@
-logout
+<?php
+
+$auth->Logout();

@@ -9,10 +9,12 @@ define("APP_ROOT", __DIR__ . DIRECTORY_SEPARATOR . "app" . DIRECTORY_SEPARATOR);
 require_once APP_ROOT . "settings.php";
 require_once APP_ROOT . "controllers" . DIRECTORY_SEPARATOR . "RoutingController.php";
 require_once APP_ROOT . "controllers" . DIRECTORY_SEPARATOR . "DatabaseController.php";
+require_once APP_ROOT . "controllers" . DIRECTORY_SEPARATOR . "DataController.php";
 require_once APP_ROOT . "controllers" . DIRECTORY_SEPARATOR . "AuthController.php";
 
 $routing = new RoutingController();
 $database = new DatabaseController();
+$data = new DataController();
 $auth = new AuthController();
 
 

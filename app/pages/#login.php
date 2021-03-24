@@ -1,3 +1,6 @@
+<?php
+$auth->aLoged();
+?>
 <main id="Login">
 
   <div class="container">
@@ -5,7 +8,7 @@
       <img src="assets/img/logo.svg" alt="Logo">
       <h1>Login page</h1>
     </div>
-    <form action="">
+    <form action="/core/login.php" method="POST">
 
       <div class="line">
         <label for="email">Email</label>

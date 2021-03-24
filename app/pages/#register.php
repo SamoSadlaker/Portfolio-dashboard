@@ -1,3 +1,6 @@
+<?php
+$auth->aLoged();
+?>
 <main id="Register">
 
   <div class="container">
@@ -17,6 +20,11 @@
           <input type="text" name="lastname" id="lastname" required placeholder="your lastname">
         </div>
 
+      </div>
+
+      <div class="line">
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username" required placeholder="your username">
       </div>
 
       <div class="line">

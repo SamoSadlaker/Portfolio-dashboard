@@ -1,3 +1,6 @@
+<?php
+$auth->isLoged();
+ ?>
 <section id="Main">
   <nav class="navbar">
     <a href="/" class="logo"><img src="assets/img/Logo.svg" alt="logo"></a>
