@@ -1,7 +1,7 @@
 <?php
 class AuthController extends DatabaseController
 {
-    private function generateStr($length)
+    public function generateStr($length)
     {
         return substr(sha1(rand()), 0, $length);
     }
