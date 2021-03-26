@@ -8,7 +8,7 @@ $auth->aLoged();
       <img src="assets/img/logo.svg" alt="Logo">
       <h1>Register page</h1>
     </div>
-    <form action="">
+    <form action="/core/register.php" method="POST">
 
       <div class="row">
         <div class="col">

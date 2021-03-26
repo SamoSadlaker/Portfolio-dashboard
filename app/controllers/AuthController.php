@@ -6,21 +6,13 @@ class AuthController extends DatabaseController
         return substr(sha1(rand()), 0, $length);
     }
 
-    private function setStatus($status)
+    public function setStatus($status)
     {
         $query = $this->openConnection()->prepare("UPDATE `users` SET `status`=:status WHERE `id`=:id");
         $query->bindParam(":status", $status, PDO::PARAM_INT);
         $query->bindParam(":id", $_SESSION['id'], PDO::PARAM_INT);
 
         $query->execute();
-
-        if (!$query) {
-            $this->closeConnection();
-            return json_decode([
-                "status" => "error",
-                "message" => "Error update"
-            ]);
-        }
 
         $this->closeConnection();
     }
@@ -30,6 +22,7 @@ class AuthController extends DatabaseController
         $options = [
             "cost" => 12,
         ];
+        
         $password = password_hash($password, PASSWORD_BCRYPT, $options);
         $uuid = $this->generateStr(9);
         $vt = $this->generateStr(11);
@@ -58,51 +51,6 @@ class AuthController extends DatabaseController
         $this->closeConnection();
     }
 
-    public function Login($email, $password)
-    {
-        $query = $this->openConnection()->prepare("SELECT * FROM `users` WHERE `email`=:email");
-        $query->bindParam(":email", $email, PDO::PARAM_STR);
-
-        $query->execute();
-
-        if (!$query) {
-            $this->closeConnection();
-            return json_encode([
-                "status" => "error",
-                "message" => "Database error"
-            ]);
-        }
-
-        $this->closeConnection();
-        $return = $query->fetch();
-
-        if (!$return) {
-            return json_encode([
-                "status" => "error",
-                "message" => "User not foud"
-            ]);
-        }
-
-        $hash = $return["password"];
-
-        if (password_verify($password, $hash)) {
-            session_start();
-            $_SESSION["id"] = $return["id"];
-            $_SESSION["uuid"] = $return["uuid"];
-            $_SESSION["isLoged"] = true;
-            $_SESSION["email"] = $return["email"];
-            $this->setStatus(1);
-            return json_encode([
-                "status" => "success",
-                "message" => "Successfully loged in"
-            ]);
-        } else {
-            return json_encode([
-                "status" => "error",
-                "message" => "Password is wrong"
-            ]);
-        }
-    }
 
 
 

@@ -1,19 +1,61 @@
 <?php
 define("APP_ROOT", dirname(__DIR__) . DIRECTORY_SEPARATOR . "app". DIRECTORY_SEPARATOR);
 require_once APP_ROOT . "controllers" . DIRECTORY_SEPARATOR . "DatabaseController.php";
-require_once APP_ROOT . "controllers" . DIRECTORY_SEPARATOR . "AuthController.php";
 require_once APP_ROOT . "controllers" . DIRECTORY_SEPARATOR . "DataController.php";
+require_once APP_ROOT . "controllers" . DIRECTORY_SEPARATOR . "AuthController.php";
 
-$auth = new AuthController();
+$database = new DatabaseController();
 $data = new DataController();
+$auth = new AuthController();
 
 if ($data->isAjax()) {
     if (!empty($_POST['email'] && !empty($_POST['password']))) {
         if (filter_var(trim($_POST['email'], FILTER_VALIDATE_EMAIL))) {
-            $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
-            $password = filter_var($_POST['password'], FILTER_SANITIZE_STRING);
+            $email = filter_var(trim($_POST['email']), FILTER_SANITIZE_EMAIL);
+            $password = trim($_POST['password']);
 
-            die($auth->Login($email, $password));
+            $query = $database->openConnection()->prepare("SELECT * FROM `users` WHERE `email`=:email");
+            $query->bindParam(":email", $email, PDO::PARAM_STR);
+
+            $query->execute();
+
+            if (!$query) {
+                $database->closeConnection();
+                die(json_encode([
+                "status" => "error",
+                "message" => "Database error"
+            ]));
+            }
+
+            $database->closeConnection();
+            $fetch = $query->fetch(PDO::FETCH_OBJ);
+
+            if (!$fetch) {
+                die(json_encode([
+                "status" => "validate",
+                "message" => "User with this email doesn't exist."
+              ]));
+            }
+
+            $passwordHash = $fetch->password;
+
+            if (password_verify($password, $passwordHash)) {
+                session_start();
+                $_SESSION["id"] = $fetch->id;
+                $_SESSION["uuid"] = $fetch->uuid;
+                $_SESSION["isLoged"] = true;
+                $_SESSION["email"] = $fetch->email;
+                $auth->setStatus(1);
+                die(json_encode([
+                "status" => "success",
+                "message" => "Successfully loged in"
+            ]));
+            } else {
+                die(json_encode([
+                "status" => "error",
+                "message" => "The credentials are incorrect"
+              ]));
+            }
         } else {
             die(json_encode([
         "status" => "validate",
