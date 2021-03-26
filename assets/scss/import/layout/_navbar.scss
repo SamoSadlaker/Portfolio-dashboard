@@ -1,9 +1,10 @@
 .navbar {
-    grid-area: navbar;
-    width: 100%;
+    width: calc(100% - #{$sidebar-width});
     height: $navbar-height;
-    background-color: darken($color-secondary, 20);
-
+    position: fixed;
+    left: $sidebar-width;
+    top: 0;
+    background-color: darken($color-secondary, 10);
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -11,26 +12,20 @@
     padding: 0 1em;
 
     .logo img {
-        height: calc(#{$navbar-height} - 10px);
+        height: calc(#{$navbar-height} - 8px);
         width: auto;
     }
 
-    .info {
-        span {
-            margin: 0 0.5em;
-            color: darken($color-text-light, 5);
-        }
+    .info span {
+        color: darken($color-text-light, 2);
     }
+
     .logout {
-        color: darken($color-text-light, 5);
-        @include rounded(em(5));
-        padding: 0.4em 0.6em;
-        background-color: darken($color-secondary, 25);
-        transform: translate(-50% -50%);
-    }
-}
-@media (max-width: 600px) {
-    .navbar .info {
-        display: none;
+        font-size: 1.5em;
+        background-color: darken($color-secondary, 20);
+        color: $color-text-light;
+        padding: 0.1em 0.2em;
+        @include rounded(em(3));
+        text-align: center;
     }
 }

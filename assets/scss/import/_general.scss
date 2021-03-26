@@ -41,19 +41,3 @@ a {
     text-decoration: none;
     color: $color-text-light;
 }
-#Main {
-    width: 100%;
-    height: 100%;
-    display: grid;
-    transition: $animation-speed;
-    grid-template-columns: $sidebar-width calc(100% - #{$sidebar-width});
-    grid-template-rows: $navbar-height 100vh $footer-height;
-    grid-template-areas:
-        "sidebar navbar"
-        "sidebar content"
-        "sidebar footer";
-}
-
-main {
-    grid-area: content;
-}
