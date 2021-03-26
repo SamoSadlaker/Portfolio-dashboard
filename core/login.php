@@ -43,6 +43,9 @@ if ($data->isAjax()) {
                 session_start();
                 $_SESSION["id"] = $fetch->id;
                 $_SESSION["uuid"] = $fetch->uuid;
+                $_SESSION["name"] = $fetch->name;
+                $_SESSION["lastname"] = $fetch->lastname;
+                $_SESSION["rank"] = $fetch->type;
                 $_SESSION["isLoged"] = true;
                 $_SESSION["email"] = $fetch->email;
                 $auth->setStatus(1);

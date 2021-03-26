@@ -1,5 +1,7 @@
 <?php
 $auth->isLoged();
+
+session_start();
  ?>
 <section id="Main">
   <nav class="navbar">
@@ -16,8 +18,8 @@ $auth->isLoged();
     <div class="container">
       <div class="head">
         <img src="assets/img/profile.png" alt="" class="profile">
-        <span class="name">Samo Sadlaker</span>
-        <span>#54235298</span>
+        <span class="name"><?= $_SESSION['name'] . " " . $_SESSION['lastname'] ?></span>
+        <span>#<?= $_SESSION['uuid'] ?></span>
         <p><i class='bx bxs-check-circle'></i> <span>Active</span></p>
       </div>
       <ul class="sidebar-list">

@@ -91,6 +91,9 @@ if ($data->isAjax()) {
                 session_start();
                 $_SESSION["id"] = $query->rowCount();
                 $_SESSION["uuid"] = $uuid;
+                $_SESSION["name"] = $name;
+                $_SESSION["lastname"] = $lastname;
+                $_SESSION["rank"] = "0";
                 $_SESSION["isLoged"] = true;
                 $_SESSION["email"] = $email;
                 $auth->setStatus(1);
