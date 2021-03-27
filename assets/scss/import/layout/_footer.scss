@@ -1,0 +1,20 @@
+footer {
+    width: 100%;
+    height: $footer-height;
+    background-color: $color-footer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+
+    p {
+        color: $color-text-light;
+    }
+    a {
+        font-weight: 600;
+        transition: color $animation-speed;
+        &:hover {
+            color: $color-secondary;
+        }
+    }
+}

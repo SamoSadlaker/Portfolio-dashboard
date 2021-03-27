@@ -1,0 +1,131 @@
+.sidebar {
+    width: $sidebar-width;
+    height: 100vh;
+    position: relative;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: $color-secondary;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+    .menu {
+        position: absolute;
+        right: 1.5em;
+        top: 0.5em;
+        color: $color-text-light;
+        font-size: 1.3em;
+    }
+    .head {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .profile {
+            width: 5.5em;
+            height: 5.5em;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+        .name {
+            margin-top: 0.4em;
+            color: $color-text-light;
+            font: {
+                size: 1.2em;
+                weight: 600;
+            }
+        }
+        #uuid {
+            color: lighten($color-text-dark, 5);
+            font-size: 0.95em;
+            &::before {
+                content: "(";
+            }
+            &::after {
+                content: ")";
+            }
+        }
+        #active {
+            margin-top: 0.5em;
+            padding: 0.4em 1em;
+            @include rounded(em(10));
+            color: $color-text-light;
+            background-color: map-get($alert-colors, "success");
+        }
+    }
+
+    .sidebar-list {
+        height: 60%;
+        margin: 0;
+        width: 100%;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+
+        .sidebar-item {
+            width: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+
+            .sidebar-link {
+                width: 100%;
+                display: flex;
+                padding: 1.1em 0.2em;
+                margin-left: 2px;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                transition: background-color $animation-speed;
+                i {
+                    margin-right: 0.2em;
+                    transform: translate(-50% -50%);
+                    font: {
+                        size: 1.7em;
+                    }
+                }
+                &:hover {
+                    background-color: darken($color-secondary, 20);
+                    border-left: 2px solid $color-text-light;
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+    .foot {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+
+        a {
+            text-align: center;
+            padding: 0.6em 0.6em;
+            font-size: 1.3em;
+            @include rounded(em(5));
+            i {
+                vertical-align: middle;
+            }
+            transition: background-color $animation-speed;
+            &:hover {
+                background-color: darken($color-secondary, 20);
+            }
+        }
+
+        .logout {
+            padding: 0.6em 0.7em;
+            font-size: 1.1em;
+            i {
+                display: none;
+            }
+        }
+    }
+}

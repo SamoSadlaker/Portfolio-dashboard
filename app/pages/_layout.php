@@ -2,20 +2,23 @@
 $auth->isLoged();
 
  ?>
+
+
+
   <nav class="navbar">
     <a href="/" class="logo"><img src="assets/img/Logo.svg" alt="logo"></a>
     <div class="info">
-      <span><i class='bx bx-alarm'></i><?= Date("H:i") ?></span>
+      <span><i class='bx bx-alarm'></i><time id="time"></time></span>
       <span><i class='bx bx-calendar'></i><?= Date("d.m. Y") ?></span>
     </div>
     <a href="/logout" class="logout"><i class='bx bx-log-out'></i></a>
   </nav>
 
-  <aside id="Sidebar" class="sidebar ">
-    <p id="menu" class="menu"><i class='bx bx-menu'></i></p>
-    <div class="container">
+  <aside id="Sidebar" class="sidebar">
+    
       <div class="head">
-        <!-- <img src="assets/img/profile.png" alt="" class="profile"> -->
+       <p id="menu" class="menu"><i class='bx bx-menu'></i></p>
+        <img src="assets/img/profile.png" alt="" class="profile">
         <p class="name"><?= $_SESSION['name'] . " " . $_SESSION['lastname'] ?></p>
         <span id="uuid">#<?= $_SESSION['uuid'] ?></span>
         <span id="active"><i class='bx bxs-check-circle'></i> Active</span>
@@ -31,17 +34,22 @@ $auth->isLoged();
       </ul>
       <div class="foot">
         <a class="settings" href="/settings"><i class='bx bx-slider-alt'></i></a>
-        <a class="logout" href="/logout">Logout</a>
+        <a class="logout" href="/logout"><i class='bx bx-log-out'></i>Logout</a>
       </div>
-    </div>
     
 
   </aside>
 
-  <?php $routing->getContent($page) ?>
+  <main id="Main">
+  <h1>YOLOOOO</h1>
+    <?php $routing->getContent($page) ?>
 
-  <footer>
-    <p>version 0.1</p>
-    <p>Copyright &copy; <?= Date("Y") ?> | All rights reserved</p>
-    <p>Created by <a href="https://samosadlaker.eu" target="_blank">SamoSadlaker</a></p>
-  </footer>
+    <footer>
+      <p>version 0.1</p>
+      <p>Copyright &copy; <?= Date("Y") ?> | All rights reserved</p>
+      <p>Created by <a href="https://samosadlaker.eu" target="_blank">SamoSadlaker</a></p>
+    </footer>
+  </main>
+  
+
+

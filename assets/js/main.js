@@ -48,8 +48,18 @@ if (menu && sidebar && main) {
     });
 }
 
+// Formfix
 if (window.history.replaceState) {
     window.history.replaceState(null, null, window.location.href);
+}
+
+// Time
+var time = document.getElementById("time");
+if (time) {
+    setInterval(() => {
+        var date = new Date();
+        time.innerText = date.getHours() + ":" + date.getMinutes();
+    }, 40);
 }
 
 // Login form
