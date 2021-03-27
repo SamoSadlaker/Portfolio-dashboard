@@ -48,4 +48,12 @@ a {
     background-color: darkgreen;
     margin-left: $sidebar-width;
     margin-top: $navbar-height;
+    transition: {
+        property: width, main;
+        duration: $animation-speed;
+    }
+}
+.max {
+    width: calc(100% - #{$sidebar-small-width}) !important;
+    margin-left: $sidebar-small-width !important;
 }

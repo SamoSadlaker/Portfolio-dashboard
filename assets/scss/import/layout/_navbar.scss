@@ -2,7 +2,7 @@
     width: calc(100% - #{$sidebar-width});
     height: $navbar-height;
     position: fixed;
-    left: $sidebar-width;
+    right: 0;
     top: 0;
     background-color: darken($color-secondary, 10);
     display: flex;
@@ -10,6 +10,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 1em;
+    transition: width $animation-speed;
 
     .logo img {
         height: calc(#{$navbar-height} - 8px);

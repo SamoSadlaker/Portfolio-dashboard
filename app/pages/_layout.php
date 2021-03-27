@@ -5,7 +5,7 @@ $auth->isLoged();
 
 
 
-  <nav class="navbar">
+  <nav class="navbar" id="navbar">
     <a href="/" class="logo"><img src="assets/img/Logo.svg" alt="logo"></a>
     <div class="info">
       <span><i class='bx bx-alarm'></i><time id="time"></time></span>
@@ -20,7 +20,7 @@ $auth->isLoged();
        <p id="menu" class="menu"><i class='bx bx-menu'></i></p>
         <img src="assets/img/profile.png" alt="" class="profile">
         <p class="name"><?= $_SESSION['name'] . " " . $_SESSION['lastname'] ?></p>
-        <span id="uuid">#<?= $_SESSION['uuid'] ?></span>
+        <i class='bx bx-hash uuid'></i><span id="uuid"><?= $_SESSION['uuid'] ?></span>
         <span id="active"><i class='bx bxs-check-circle'></i> Active</span>
       </div>
       <ul class="sidebar-list">

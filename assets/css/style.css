@@ -1,41 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Ubuntu:wght@500&display=swap");
-@-webkit-keyframes sidebarSlideIn {
-  0% {
-    width: 17.5em;
-  }
-  100% {
-    width: 3.75em;
-  }
-}
-@keyframes sidebarSlideIn {
-  0% {
-    width: 17.5em;
-  }
-  100% {
-    width: 3.75em;
-  }
-}
-
-@-webkit-keyframes mainSlideIn {
-  0% {
-    grid-template-columns: 17.5em calc(100% - 17.5em);
-  }
-  100% {
-    grid-template-columns: 3.75em calc( 100% - 3.75em) !important;
-  }
-}
-
-@keyframes mainSlideIn {
-  0% {
-    -ms-grid-columns: 17.5em calc(100% - 17.5em);
-        grid-template-columns: 17.5em calc(100% - 17.5em);
-  }
-  100% {
-    -ms-grid-columns: 3.75em calc( 100% - 3.75em) !important;
-        grid-template-columns: 3.75em calc( 100% - 3.75em) !important;
-  }
-}
-
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -89,6 +52,15 @@ a {
   background-color: darkgreen;
   margin-left: 17.5em;
   margin-top: 2.5em;
+  -webkit-transition-property: width, main;
+  transition-property: width, main;
+  -webkit-transition-duration: 0.25s;
+          transition-duration: 0.25s;
+}
+
+.max {
+  width: calc(100% - 3.75em) !important;
+  margin-left: 3.75em !important;
 }
 
 .alert-default, .alert-error, .alert-success {
@@ -177,7 +149,7 @@ a {
   width: calc(100% - 17.5em);
   height: 2.5em;
   position: fixed;
-  left: 17.5em;
+  right: 0;
   top: 0;
   background-color: #166489;
   display: -webkit-box;
@@ -194,6 +166,8 @@ a {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 0 1em;
+  -webkit-transition: width 0.25s;
+  transition: width 0.25s;
 }
 
 .navbar .logo img {
@@ -235,6 +209,8 @@ a {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  -webkit-transition: width 0.25s;
+  transition: width 0.25s;
 }
 
 .sidebar .menu {
@@ -280,11 +256,15 @@ a {
 }
 
 .sidebar .head #uuid::before {
-  content: "(";
+  content: "(#";
 }
 
 .sidebar .head #uuid::after {
   content: ")";
+}
+
+.sidebar .head .uuid {
+  display: none;
 }
 
 .sidebar .head #active {
@@ -338,7 +318,7 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 1.1em 0.2em;
+  padding: 1.1em 25%;
   margin-left: 2px;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
@@ -347,15 +327,15 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-transition: background-color 0.25s;
   transition: background-color 0.25s;
 }
 
 .sidebar .sidebar-list .sidebar-item .sidebar-link i {
-  margin-right: 0.2em;
+  margin-right: 0.5em;
   -webkit-transform: translate(-50% -50%);
           transform: translate(-50% -50%);
   font-size: 1.7em;
@@ -408,6 +388,74 @@ a {
 
 .sidebar .foot .logout i {
   display: none;
+}
+
+.sidebar-mini {
+  overflow: hidden;
+  width: 3.75em;
+  -webkit-transition: width 0.25s;
+  transition: width 0.25s;
+}
+
+.sidebar-mini .menu {
+  position: static;
+}
+
+.sidebar-mini .head .profile {
+  display: none;
+}
+
+.sidebar-mini .head .name {
+  display: none;
+}
+
+.sidebar-mini .head #uuid {
+  display: none;
+}
+
+.sidebar-mini .head .uuid {
+  display: block;
+  margin-top: 0.2em;
+}
+
+.sidebar-mini .head #active {
+  padding: 0.3em 0;
+  border-radius: 0;
+  text-align: center;
+}
+
+.sidebar-mini .sidebar-list .sidebar-item .sidebar-link {
+  padding: 1.1em 30%;
+}
+
+.sidebar-mini .foot {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.sidebar-mini .foot a {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 0;
+}
+
+.sidebar-mini .foot .logout i {
+  display: block;
+  font-size: 1.2em;
 }
 
 footer {

@@ -10,6 +10,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
+    transition: width $animation-speed;
 
     .menu {
         position: absolute;
@@ -42,11 +43,14 @@
             color: lighten($color-text-dark, 5);
             font-size: 0.95em;
             &::before {
-                content: "(";
+                content: "(#";
             }
             &::after {
                 content: ")";
             }
+        }
+        .uuid {
+            display: none;
         }
         #active {
             margin-top: 0.5em;
@@ -78,14 +82,14 @@
             .sidebar-link {
                 width: 100%;
                 display: flex;
-                padding: 1.1em 0.2em;
+                padding: 1.1em 25%;
                 margin-left: 2px;
                 flex-direction: row;
                 align-items: center;
-                justify-content: center;
+                justify-content: flex-start;
                 transition: background-color $animation-speed;
                 i {
-                    margin-right: 0.2em;
+                    margin-right: 0.5em;
                     transform: translate(-50% -50%);
                     font: {
                         size: 1.7em;
@@ -125,6 +129,58 @@
             font-size: 1.1em;
             i {
                 display: none;
+            }
+        }
+    }
+}
+.sidebar-mini {
+    overflow: hidden;
+    width: $sidebar-small-width;
+    transition: width $animation-speed;
+
+    .menu {
+        position: static;
+    }
+    .head {
+        .profile {
+            display: none;
+        }
+        .name {
+            display: none;
+        }
+        #uuid {
+            display: none;
+        }
+        .uuid {
+            display: block;
+            margin-top: 0.2em;
+        }
+        #active {
+            padding: 0.3em 0;
+            border-radius: 0;
+            text-align: center;
+        }
+    }
+    .sidebar-list .sidebar-item .sidebar-link {
+        padding: 1.1em 30%;
+    }
+
+    .foot {
+        flex-direction: column;
+
+        a {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0;
+        }
+
+        .logout {
+            i {
+                display: block;
+                font-size: 1.2em;
             }
         }
     }

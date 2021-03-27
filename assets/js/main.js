@@ -40,11 +40,14 @@ function getRegistrationData() {
 var sidebar = document.getElementById("Sidebar");
 var menu = document.getElementById("menu");
 var main = document.getElementById("Main");
+var navvar = document.getElementById("navbar");
 
-if (menu && sidebar && main) {
+if (menu && sidebar && main && navbar) {
     menu.addEventListener("click", () => {
-        sidebar.classList.toggle("mini");
+        sidebar.classList.toggle("sidebar-mini");
         main.classList.toggle("max");
+        navbar.classList.toggle("max");
+        // console.log(sidebar.classList.value.split(" ")[1]);
     });
 }
 
