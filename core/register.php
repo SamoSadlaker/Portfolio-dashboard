@@ -3,11 +3,13 @@ define("APP_ROOT", dirname(__DIR__) . DIRECTORY_SEPARATOR . "app". DIRECTORY_SEP
 require_once APP_ROOT . "controllers" . DIRECTORY_SEPARATOR . "DatabaseController.php";
 require_once APP_ROOT . "controllers" . DIRECTORY_SEPARATOR . "AuthController.php";
 require_once APP_ROOT . "controllers" . DIRECTORY_SEPARATOR . "DataController.php";
+require_once APP_ROOT . "controllers" . DIRECTORY_SEPARATOR . "MailController.php";
 
 
 $database = new DatabaseController();
 $data = new DataController();
 $auth = new AuthController();
+$mail = new MailController();
 
 if ($data->isAjax()) {
     if (!empty($_POST['name']) && !empty($_POST['lastname']) && !empty($_POST['username']) && !empty($_POST['email']) && !empty($_POST['password'])) {
@@ -134,6 +136,7 @@ if ($data->isAjax()) {
                 $_SESSION["isLoged"] = true;
                 $_SESSION["email"] = $email;
                 $auth->setStatus(1);
+                $mail->sendVerifyMail($email, $name, $vt);
 
                 die(json_encode([
                         "status" => "success",

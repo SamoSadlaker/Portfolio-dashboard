@@ -76,4 +76,48 @@ class AuthController extends DatabaseController
             header("Location: /login");
         }
     }
+
+    public function verifyAccount()
+    {
+        if (isset($_GET['id']) && !empty($_GET['id'])) {
+            $id = filter_var(trim($_GET['id']), FILTER_SANITIZE_STRING);
+
+            $query = $this->openConnection()->prepare("SELECT * FROM `users` WHERE `verification_token`=:id");
+            $query->bindParam(":id", $id, PDO::PARAM_STR);
+
+            $query->execute();
+            if (!$query) {
+                $this->closeConnection();
+                die(json_encode([
+                "status" => "error",
+                "message" => "Database error"
+            ]));
+            }
+            $this->closeConnection();
+            $fetch = $query->fetch(PDO::FETCH_OBJ);
+
+            if (!$fetch) {
+                header("Location: /");
+            }
+
+            $uuid = $fetch->uuid;
+            $vt = $this->generateStr(11);
+
+            $update = $this->openConnection()->prepare("UPDATE `users` SET `verification_token`=:vt, `verified`='1' WHERE `uuid`=:uuid");
+            $update->bindParam(":vt", $vt, PDO::PARAM_STR);
+            $update->bindParam(":uuid", $uuid, PDO::PARAM_STR);
+            $update->execute();
+            if (!$update) {
+                $this->closeConnection();
+                die(json_encode([
+                "status" => "error",
+                "message" => "Database error"
+            ]));
+            }
+            $this->closeConnection();
+            header("Location: /");
+        } else {
+            header("Location: /");
+        }
+    }
 }

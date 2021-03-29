@@ -17,6 +17,7 @@ class RoutingController
             $database = new DatabaseController();
             $auth = new AuthController();
             $data = new DataController();
+            $mail = new MailController();
             require_once APP_ROOT . "pages" . DIRECTORY_SEPARATOR . "_layout.php";
         } else {
             if (file_exists(APP_ROOT . "pages" . DIRECTORY_SEPARATOR . "#" . $url . ".php")) {
@@ -25,6 +26,7 @@ class RoutingController
                 $database = new DatabaseController();
                 $auth = new AuthController();
                 $data = new DataController();
+                $mail = new MailController();
                 require_once APP_ROOT . "pages" . DIRECTORY_SEPARATOR . "#" . $url . ".php";
             } else {
                 $this->redirect("/");

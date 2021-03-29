@@ -11,6 +11,7 @@ require_once APP_ROOT . "controllers" . DIRECTORY_SEPARATOR . "RoutingController
 require_once APP_ROOT . "controllers" . DIRECTORY_SEPARATOR . "DatabaseController.php";
 require_once APP_ROOT . "controllers" . DIRECTORY_SEPARATOR . "DataController.php";
 require_once APP_ROOT . "controllers" . DIRECTORY_SEPARATOR . "AuthController.php";
+require_once APP_ROOT . "controllers" . DIRECTORY_SEPARATOR . "MailController.php";
 
 $routing = new RoutingController();
 $database = new DatabaseController();
