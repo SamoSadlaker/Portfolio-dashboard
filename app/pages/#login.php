@@ -22,6 +22,7 @@ $auth->aLoged();
       </div>
 
       <button type="submit">Login</button>
+      <a href="/reset">Forgot password?</a>
 
     </form>
 

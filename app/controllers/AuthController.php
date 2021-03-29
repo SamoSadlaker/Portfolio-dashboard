@@ -17,43 +17,6 @@ class AuthController extends DatabaseController
         $this->closeConnection();
     }
 
-    public function Register($name, $lastname, $username, $email, $password)
-    {
-        $options = [
-            "cost" => 12,
-        ];
-        
-        $password = password_hash($password, PASSWORD_BCRYPT, $options);
-        $uuid = $this->generateStr(9);
-        $vt = $this->generateStr(11);
-        $rt = $this->generateStr(11);
-
-        $query = $this->openConnection()->prepare("INSERT INTO `users` (`uuid`, `name`, `lastname`, `username`, `email`, `password`, `verification_token`, `recovery_token`) VALUES (:uuid, :name, :lastname, :username, :email, :password, :verification_token, :recovery_token)");
-        $query->bindParam(":uuid", $uuid, PDO::PARAM_STR);
-        $query->bindParam(":name", $name, PDO::PARAM_STR);
-        $query->bindParam(":lastname", $lastname, PDO::PARAM_STR);
-        $query->bindParam(":username", $username, PDO::PARAM_STR);
-        $query->bindParam(":email", $email, PDO::PARAM_STR);
-        $query->bindParam(":password", $password, PDO::PARAM_STR);
-        $query->bindParam(":verification_token", $vt, PDO::PARAM_STR);
-        $query->bindParam(":recovery_token", $rt, PDO::PARAM_STR);
-
-        $query->execute();
-
-        if (!$query) {
-            $this->closeConnection();
-            return json_decode([
-                "status" => "error",
-                "message" => "Database error"
-            ]);
-        }
-
-        $this->closeConnection();
-    }
-
-
-
-
     public function IsLoged()
     {
         session_start();
@@ -84,5 +47,33 @@ class AuthController extends DatabaseController
         
         $routing = new RoutingController();
         $routing->redirect("/login");
+    }
+
+    public function recoverPassword()
+    {
+        if (isset($_GET['id']) && !empty($_GET['id'])) {
+            $id = filter_var(trim($_GET['id']), FILTER_SANITIZE_STRING);
+
+            $query = $this->openConnection()->prepare("SELECT * FROM `users` WHERE `recovery_token`=:id");
+            $query->bindParam(":id", $id, PDO::PARAM_STR);
+
+            $query->execute();
+            if (!$query) {
+                $this->closeConnection();
+                die(json_encode([
+                "status" => "error",
+                "message" => "Database error"
+            ]));
+            }
+            $this->closeConnection();
+            $fetch = $query->fetch(PDO::FETCH_OBJ);
+
+            if (!$fetch) {
+                header("Location: /login");
+            }
+            return $fetch->recovery_token;
+        } else {
+            header("Location: /login");
+        }
     }
 }

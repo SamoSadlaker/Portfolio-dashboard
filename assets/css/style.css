@@ -646,6 +646,10 @@ footer a:hover {
   background-color: #006ec5;
 }
 
+#Login .container form a {
+  margin-top: 0.5em;
+}
+
 #Login .container p,
 #Login .container a {
   color: #111;
@@ -969,6 +973,7 @@ footer a:hover {
 #Reset .container p,
 #Reset .container a {
   color: #111;
+  margin-top: 0.5em;
 }
 
 #Reset .container a {
@@ -976,6 +981,142 @@ footer a:hover {
 }
 
 #Reset .container a:hover {
+  text-decoration: underline;
+}
+
+#Password {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#Password .container {
+  width: 30em;
+  height: 28em;
+  background-color: #ffffff;
+  padding: 1em 0.5em;
+  border-radius: 0.625em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#Password .container .head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#Password .container .head img {
+  height: 5em;
+  width: auto;
+}
+
+#Password .container .head h1 {
+  color: #006ec5;
+  margin-top: 0.5em;
+  text-transform: uppercase;
+  font-size: 2.1em;
+  font-weight: 700;
+  font-family: "Ubuntu", sans-serif;
+}
+
+#Password .container form {
+  margin-top: 2em;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#Password .container form .line {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0.4em 0;
+}
+
+#Password .container form .line label {
+  padding: 0.1em 0.2em;
+}
+
+#Password .container form .line input {
+  width: 19em;
+  height: 2.5em;
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 0.2em 0.5em;
+  border-radius: 0.25em;
+  font-size: 1em;
+}
+
+#Password .container form button {
+  margin-top: 0.8em;
+  padding: 0.5em 1.9em;
+  background-color: #008bf8;
+  color: #f1f1f1;
+  outline: none;
+  border: none;
+  font-size: 1.1em;
+  font-weight: 600;
+  border-radius: 0.25em;
+  -webkit-transition: background-color 0.25s;
+  transition: background-color 0.25s;
+}
+
+#Password .container form button:hover {
+  background-color: #006ec5;
+}
+
+#Password .container p,
+#Password .container a {
+  color: #111;
+}
+
+#Password .container a {
+  color: #008bf8;
+}
+
+#Password .container a:hover {
   text-decoration: underline;
 }
 /*# sourceMappingURL=style.css.map */

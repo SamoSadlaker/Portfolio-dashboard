@@ -13,6 +13,7 @@
 
       <button type="submit">Send email</button>
     </form>
+    <a href="/login">Go back to login.</a>
 
   </div>
 

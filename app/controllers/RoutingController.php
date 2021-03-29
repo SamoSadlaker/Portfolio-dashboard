@@ -34,6 +34,7 @@ class RoutingController
 
     public function getScript()
     {
+        $return = "";
         if (empty($_GET['url'])) {
             $page = "index";
         } else {

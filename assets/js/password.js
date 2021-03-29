@@ -1,20 +1,17 @@
-// Register form
-var register = document.getElementById("registerForm");
-var rerror = document.getElementById("error");
+var password = document.getElementById("passwordForm");
+var perror = document.getElementById("error");
 
-register.addEventListener("submit", (e) => {
+password.addEventListener("submit", (e) => {
     e.preventDefault();
 
     var xmlhttp = new XMLHttpRequest();
-    xmlhttp.open("POST", "/core/register.php", true);
+    xmlhttp.open("POST", "/core/password.php", true);
     xmlhttp.setRequestHeader("X-Requested-With", "XMLHttpRequest");
 
     var formdata = new FormData();
-    formdata.append("name", document.getElementById("name").value);
-    formdata.append("lastname", document.getElementById("lastname").value);
-    formdata.append("username", document.getElementById("username").value);
-    formdata.append("email", document.getElementById("email").value);
     formdata.append("password", document.getElementById("password").value);
+    formdata.append("again", document.getElementById("again").value);
+    formdata.append("id", document.getElementById("uid").value);
 
     xmlhttp.onreadystatechange = () => {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
@@ -22,16 +19,20 @@ register.addEventListener("submit", (e) => {
 
             switch (res.status) {
                 case "validate":
-                    rerror.textContent = "* " + res.message;
+                    perror.textContent = "* " + res.message;
                     break;
 
                 case "error":
-                    rerror.textContent = "";
+                    perror.textContent = "";
                     popalert("error", res.message);
                     break;
 
                 case "success":
-                    window.location.replace("/");
+                    popalert("success", res.message);
+                    setTimeout(() => {
+                        window.location.replace("/login");
+                    }, 8000);
+
                     break;
             }
         }
