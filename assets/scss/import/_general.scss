@@ -49,10 +49,6 @@ a {
     margin-left: $sidebar-width;
     margin-top: $navbar-height;
     padding: 0.4em 0.9em;
-    transition: {
-        property: width, main;
-        duration: $animation-speed;
-    }
 }
 .max {
     width: calc(100% - #{$sidebar-small-width}) !important;

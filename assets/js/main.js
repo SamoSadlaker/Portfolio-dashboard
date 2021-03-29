@@ -23,13 +23,15 @@ function popalert(type, message) {
 var sidebar = document.getElementById("Sidebar");
 var menu = document.getElementById("menu");
 var main = document.getElementById("Main");
-var navvar = document.getElementById("navbar");
+var navbar = document.getElementById("navbar");
+var footer = document.getElementById("footer");
 
-if (menu && sidebar && main && navbar) {
+if (menu && sidebar && main && navbar && footer) {
     menu.addEventListener("click", () => {
         sidebar.classList.toggle("sidebar-mini");
         main.classList.toggle("max");
         navbar.classList.toggle("max");
+        footer.classList.toggle("max");
         // console.log(sidebar.classList.value.split(" ")[1]);
     });
 }

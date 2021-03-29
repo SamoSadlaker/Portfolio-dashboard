@@ -46,7 +46,7 @@ $auth->isLoged();
     
     <?php $routing->getContent($page) ?>
   </main>
-  <footer>
+  <footer id="footer">
       <p>version 0.1</p>
       <p>Copyright &copy; <?= Date("Y") ?> | All rights reserved</p>
       <p>Created by <a href="https://samosadlaker.eu" target="_blank">SamoSadlaker</a></p>
