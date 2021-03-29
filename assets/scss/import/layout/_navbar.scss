@@ -11,6 +11,7 @@
     justify-content: space-between;
     padding: 0 1em;
     transition: width $animation-speed;
+    z-index: 100;
 
     .logo img {
         height: calc(#{$navbar-height} - 8px);

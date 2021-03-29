@@ -49,9 +49,10 @@ a {
   width: calc(100% - 17.5em);
   min-height: calc(100vh - 2.5em);
   height: 100vh;
-  background-color: darkgreen;
+  background-color: #f1f1f1;
   margin-left: 17.5em;
   margin-top: 2.5em;
+  padding: 0.4em 0.9em;
   -webkit-transition-property: width, main;
   transition-property: width, main;
   -webkit-transition-duration: 0.25s;
@@ -168,6 +169,7 @@ a {
   padding: 0 1em;
   -webkit-transition: width 0.25s;
   transition: width 0.25s;
+  z-index: 100;
 }
 
 .navbar .logo img {
@@ -465,7 +467,8 @@ a {
 }
 
 footer {
-  width: 100%;
+  width: calc(100% - 17.5em);
+  margin-left: 17.5em;
   height: 2.1875em;
   background-color: #0b0a07;
   display: -webkit-box;
@@ -511,6 +514,59 @@ footer a:hover {
   footer a {
     font-size: 0.95em;
   }
+}
+
+.notification-default, .notification-error, .notification-success, .notification-warning, .notification-info {
+  width: 80%;
+  height: 3em;
+  margin: 1em auto;
+  padding: 0.2em 0.9em;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 0.625em;
+  color: #f1f1f1;
+}
+
+.notification-default i, .notification-error i, .notification-success i, .notification-warning i, .notification-info i {
+  position: absolute;
+  right: 0.5em;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+.notification-default {
+  background-color: #0d6efd;
+}
+
+.notification-error {
+  background-color: #dc3545;
+}
+
+.notification-success {
+  background-color: #28a745;
+}
+
+.notification-warning {
+  background-color: #ffc107;
+}
+
+.notification-info {
+  background-color: #6c757d;
 }
 
 #Login {

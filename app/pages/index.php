@@ -1,3 +1,0 @@
-<main>
-  aoy
-</main>

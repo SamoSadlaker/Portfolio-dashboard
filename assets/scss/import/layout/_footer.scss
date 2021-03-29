@@ -1,5 +1,6 @@
 footer {
-    width: 100%;
+    width: calc(100% - #{$sidebar-width});
+    margin-left: $sidebar-width;
     height: $footer-height;
     background-color: $color-footer;
     display: flex;

@@ -1,6 +1,7 @@
 <?php
 $auth->isLoged();
 
+
  ?>
 
 
@@ -41,15 +42,14 @@ $auth->isLoged();
   </aside>
 
   <main id="Main">
-  <h1>YOLOOOO</h1>
+    <?= $alert->showAlerts() ?>
+    
     <?php $routing->getContent($page) ?>
-
-    <footer>
+  </main>
+  <footer>
       <p>version 0.1</p>
       <p>Copyright &copy; <?= Date("Y") ?> | All rights reserved</p>
       <p>Created by <a href="https://samosadlaker.eu" target="_blank">SamoSadlaker</a></p>
-    </footer>
-  </main>
-  
+  </footer>
 
 

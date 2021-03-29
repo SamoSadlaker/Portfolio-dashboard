@@ -1,0 +1,29 @@
+%notification {
+    width: 80%;
+    height: 3em;
+    margin: 1em auto;
+    padding: 0.2em 0.9em;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    @include rounded(em(10));
+    color: $color-text-light;
+
+    i {
+        position: absolute;
+        right: 0.5em;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 1.2em;
+        cursor: pointer;
+    }
+}
+
+@each $notification, $color in $notifications-colors {
+    .notification-#{$notification} {
+        @extend %notification;
+        background-color: rgba($color, 1);
+    }
+}

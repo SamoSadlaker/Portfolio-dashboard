@@ -12,11 +12,14 @@ require_once APP_ROOT . "controllers" . DIRECTORY_SEPARATOR . "DatabaseControlle
 require_once APP_ROOT . "controllers" . DIRECTORY_SEPARATOR . "DataController.php";
 require_once APP_ROOT . "controllers" . DIRECTORY_SEPARATOR . "AuthController.php";
 require_once APP_ROOT . "controllers" . DIRECTORY_SEPARATOR . "MailController.php";
+require_once APP_ROOT . "controllers" . DIRECTORY_SEPARATOR . "AlertController.php";
 
 $routing = new RoutingController();
 $database = new DatabaseController();
 $data = new DataController();
 $auth = new AuthController();
+$mail = new MailController();
+$alert = new AlertController();
 
 
 
