@@ -18,3 +18,14 @@ footer {
         }
     }
 }
+@media (max-width: 900px) {
+    footer {
+        height: calc(#{$footer-height} + 2.5em);
+        flex-direction: column;
+        justify-content: center;
+        p,
+        a {
+            font-size: 0.95em;
+        }
+    }
+}

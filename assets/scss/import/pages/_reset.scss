@@ -1,0 +1,104 @@
+#Reset {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .container {
+        width: 30em;
+        height: 25em;
+        background-color: #ffffff;
+        padding: 1em 0.5em;
+
+        @include rounded(em(10));
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .head {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            img {
+                height: 5em;
+                width: auto;
+            }
+
+            h1 {
+                color: darken($color-primary, 10);
+                margin-top: 0.5em;
+                text-transform: uppercase;
+                font: {
+                    size: 2.1em;
+                    weight: 700;
+                    family: "Ubuntu", sans-serif;
+                }
+            }
+        }
+
+        form {
+            margin-top: 2em;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .line {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                margin: 0.4em 0;
+
+                label {
+                    padding: 0.1em 0.2em;
+                }
+
+                input {
+                    width: 19em;
+                    height: 2.5em;
+                    outline: none;
+                    border: 1px solid rgba(0, 0, 0, 0.2);
+                    padding: 0.2em 0.5em;
+                    @include rounded(em(4));
+                    font: {
+                        size: 1em;
+                    }
+                }
+            }
+            button {
+                margin-top: 0.8em;
+                padding: 0.5em 1.9em;
+                background-color: $color-primary;
+                color: $color-text-light;
+                outline: none;
+                border: none;
+                font: {
+                    size: 1.1em;
+                    weight: 600;
+                }
+                @include rounded(em(4));
+                transition: background-color $animation-speed;
+                &:hover {
+                    background-color: darken($color-primary, 10);
+                }
+            }
+        }
+
+        p,
+        a {
+            color: $color-text-dark;
+        }
+
+        a {
+            color: $color-primary;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

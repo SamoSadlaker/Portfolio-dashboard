@@ -32,6 +32,20 @@ class RoutingController
         }
     }
 
+    public function getScript()
+    {
+        if (empty($_GET['url'])) {
+            $page = "index";
+        } else {
+            $page = $_GET['url'];
+        }
+        if (file_exists(ROOT . "assets" . DIRECTORY_SEPARATOR . "js" . DIRECTORY_SEPARATOR . $page . ".js")) {
+            $return = '<script src="assets/js/' . $page . '.js"></script>';
+        }
+        
+        return $return;
+    }
+
     public function getContent($page)
     {
         if (file_exists(APP_ROOT . "pages" . DIRECTORY_SEPARATOR . $page . ".php")) {

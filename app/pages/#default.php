@@ -36,6 +36,7 @@
   <?php $routing->getPage() ?>
 
   <script src="assets/js/main.js"></script>
+  <?= $routing->getScript() ?>
 
 </body>
 </html>
