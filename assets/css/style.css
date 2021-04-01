@@ -772,6 +772,59 @@ footer a:hover {
   width: 40%;
 }
 
+#Users {
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#Users table {
+  width: 99%;
+}
+
+#Users table thead tr {
+  background-color: rgba(53, 53, 53, 0.445);
+  -webkit-box-shadow: 0 4px 12px 0px rgba(0, 0, 0, 0.055);
+          box-shadow: 0 4px 12px 0px rgba(0, 0, 0, 0.055);
+  border: none;
+  outline: none;
+  border-spacing: 0;
+  line-height: 3em;
+}
+
+#Users table tbody tr {
+  line-height: 2em;
+  text-align: center;
+  background-color: rgba(211, 211, 211, 0.192);
+  vertical-align: middle;
+}
+
+#Users table tbody tr:nth-child(even) {
+  background-color: rgba(209, 209, 209, 0.541);
+}
+
+#Users table tbody tr td i {
+  font-size: 1.3em;
+  vertical-align: middle;
+}
+
+#Users table tbody tr .true {
+  color: #28a745;
+}
+
+#Users table tbody tr .false {
+  color: #fd685b;
+}
+
 #Settings {
   width: 100%;
   height: 100vh;
