@@ -639,6 +639,139 @@ footer a:hover {
   background-color: #006ec5;
 }
 
+#Index {
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#Index .info {
+  width: 100%;
+  padding: 1em 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+#Index .info .badge {
+  width: 13em;
+  height: 6em;
+  padding: 0.8em 0.9em;
+  border-radius: 0.625em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  background-color: #39a0ed;
+  -webkit-box-shadow: 0 4px 12px 0px rgba(0, 0, 0, 0.055);
+          box-shadow: 0 4px 12px 0px rgba(0, 0, 0, 0.055);
+}
+
+#Index .info .badge i {
+  font-size: 3em;
+  color: #f1f1f1;
+  vertical-align: middle;
+}
+
+#Index .info .badge span {
+  color: #f1f1f1;
+  font-size: 1.5em;
+  font-weight: 600;
+  font-family: "Ubntu", sans-serif;
+}
+
+#Index .info .badge p {
+  color: #f1f1f1;
+}
+
+#Index .info .badge:nth-child(2) {
+  background-color: #ff8011c7;
+}
+
+#Index .info .badge:nth-child(3) {
+  background-color: #79b473;
+}
+
+#Index .about {
+  width: 100%;
+  margin-top: 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#Index .about h3 {
+  text-align: center;
+  color: #006ec5;
+  font-size: 1.5em;
+  font-weight: 500;
+  font-family: "Ubuntu", sans-serif;
+}
+
+#Index .about table {
+  width: 90%;
+  padding: 1em 1em;
+  border-spacing: 0;
+  background-color: rgba(167, 167, 167, 0.075);
+  -webkit-box-shadow: 0 4px 12px 0px rgba(0, 0, 0, 0.055);
+          box-shadow: 0 4px 12px 0px rgba(0, 0, 0, 0.055);
+}
+
+#Index .about table tbody {
+  display: table-row-group;
+  vertical-align: middle;
+}
+
+#Index .about table tr {
+  display: table-row;
+  width: 100%;
+}
+
+#Index .about table th {
+  padding: 0.7em 1em;
+  width: 60%;
+  text-align: left;
+}
+
+#Index .about table td {
+  width: 40%;
+}
+
 #Settings {
   width: 100%;
   height: 100vh;

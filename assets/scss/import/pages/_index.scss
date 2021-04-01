@@ -1,0 +1,95 @@
+#Index {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .info {
+        width: 100%;
+        padding: 1em 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        .badge {
+            width: 13em;
+            height: 6em;
+            padding: 0.8em 0.9em;
+            @include rounded(em(10));
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-evenly;
+            background-color: #39a0ed;
+            box-shadow: 0 4px 12px 0px rgba(0, 0, 0, 0.055);
+
+            i {
+                font-size: 3em;
+                color: $color-text-light;
+                vertical-align: middle;
+            }
+
+            span {
+                color: $color-text-light;
+                font: {
+                    size: 1.5em;
+                    weight: 600;
+                    family: "Ubntu", sans-serif;
+                }
+            }
+            p {
+                color: $color-text-light;
+            }
+            &:nth-child(2) {
+                background-color: #ff8011c7;
+            }
+            &:nth-child(3) {
+                background-color: #79b473;
+            }
+        }
+    }
+
+    .about {
+        width: 100%;
+        margin-top: 2em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        h3 {
+            text-align: center;
+            color: darken($color-primary, 10);
+            font: {
+                size: 1.5em;
+                weight: 500;
+                family: "Ubuntu", sans-serif;
+            }
+        }
+
+        table {
+            width: 90%;
+            padding: 1em 1em;
+            border-spacing: 0;
+            background-color: rgba(167, 167, 167, 0.075);
+            box-shadow: 0 4px 12px 0px rgba(0, 0, 0, 0.055);
+
+            tbody {
+                display: table-row-group;
+                vertical-align: middle;
+            }
+            tr {
+                display: table-row;
+                width: 100%;
+            }
+            th {
+                padding: 0.7em 1em;
+                width: 60%;
+                text-align: left;
+            }
+            td {
+                width: 40%;
+            }
+        }
+    }
+}
