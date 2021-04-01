@@ -105,14 +105,16 @@ if ($data->isAjax()) {
                 $uuid = $auth->generateStr(9);
                 $vt = $auth->generateStr(11);
                 $rt = $auth->generateStr(11);
+                $profile = $data->downloadImage("https://eu.ui-avatars.com/api/?name={$username}&background=random&color=fff&rounded=false&bold=true&format=svg");
 
-                $query = $database->openConnection()->prepare("INSERT INTO `users` (`uuid`, `name`, `lastname`, `username`, `email`, `password`, `verification_token`, `recovery_token`) VALUES (:uuid, :name, :lastname, :username, :email, :password, :verification_token, :recovery_token)");
+                $query = $database->openConnection()->prepare("INSERT INTO `users` (`uuid`, `name`, `lastname`, `username`, `email`, `password`, `image`, `verification_token`, `recovery_token`) VALUES (:uuid, :name, :lastname, :username, :email, :password, :image, :verification_token, :recovery_token)");
                 $query->bindParam(":uuid", $uuid, PDO::PARAM_STR);
                 $query->bindParam(":name", $name, PDO::PARAM_STR);
                 $query->bindParam(":lastname", $lastname, PDO::PARAM_STR);
                 $query->bindParam(":username", $username, PDO::PARAM_STR);
                 $query->bindParam(":email", $email, PDO::PARAM_STR);
                 $query->bindParam(":password", $hash, PDO::PARAM_STR);
+                $query->bindParam(":image", $profile, PDO::PARAM_STR);
                 $query->bindParam(":verification_token", $vt, PDO::PARAM_STR);
                 $query->bindParam(":recovery_token", $rt, PDO::PARAM_STR);
 

@@ -26,4 +26,20 @@ class DataController
         }
         return $return;
     }
+
+    public function downloadImage($url)
+    {
+        $image = file_get_contents($url);
+        if($image){
+            $random = substr(sha1(rand()), 0, 8);
+            $location = ROOT . "assets" . DIRECTORY_SEPARATOR . "img" . DIRECTORY_SEPARATOR . "profile". DIRECTORY_SEPARATOR;
+            $image_name = $random . ".svg";
+
+            $save = fopen($location . $image_name, "w");
+            fwrite($save, $image);
+            fclose($save);
+
+            return $image_name;
+        }
+    }
 }
