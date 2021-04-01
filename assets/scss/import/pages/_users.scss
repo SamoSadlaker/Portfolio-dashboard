@@ -7,13 +7,13 @@
 
     table {
         width: 99%;
+        border: none;
+        outline: none;
+        border-spacing: 0;
         thead tr {
             background-color: rgba(53, 53, 53, 0.445);
             box-shadow: 0 4px 12px 0px rgba(0, 0, 0, 0.055);
 
-            border: none;
-            outline: none;
-            border-spacing: 0;
             line-height: 3em;
         }
 

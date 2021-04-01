@@ -34,6 +34,10 @@
         <button class="submit" type="submit">Change email</button>
       </form>
     </section>
+    <section class="upload-container">
+      <h5>Change profile picture</h5>
+      
+    </section>
   </div>
  
 </div>

@@ -789,15 +789,15 @@ footer a:hover {
 
 #Users table {
   width: 99%;
+  border: none;
+  outline: none;
+  border-spacing: 0;
 }
 
 #Users table thead tr {
   background-color: rgba(53, 53, 53, 0.445);
   -webkit-box-shadow: 0 4px 12px 0px rgba(0, 0, 0, 0.055);
           box-shadow: 0 4px 12px 0px rgba(0, 0, 0, 0.055);
-  border: none;
-  outline: none;
-  border-spacing: 0;
   line-height: 3em;
 }
 
@@ -855,6 +855,8 @@ footer a:hover {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 #Settings .password-container,
@@ -869,6 +871,33 @@ footer a:hover {
 
 #Settings .password-container h5,
 #Settings .email-container h5 {
+  text-align: center;
+  color: #006ec5;
+  font-size: 1.2em;
+  font-weight: 500;
+  font-family: "Ubuntu", sans-serif;
+}
+
+#Settings .upload-container {
+  background-color: rgba(219, 219, 219, 0.062);
+  padding: 0.2em;
+  width: 18em;
+  -webkit-box-shadow: 0 4px 12px 0px rgba(0, 0, 0, 0.116);
+          box-shadow: 0 4px 12px 0px rgba(0, 0, 0, 0.116);
+  padding: 0.9em 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#Settings .upload-container h5 {
   text-align: center;
   color: #006ec5;
   font-size: 1.2em;
