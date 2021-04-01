@@ -60,6 +60,14 @@ a {
   margin-left: 3.75em !important;
 }
 
+.title {
+  padding: 0.8em 0;
+  color: #008bf8;
+  font-size: 2.3em;
+  font-weight: 600;
+  font-family: "Ubuntu", sans-serif;
+}
+
 .alert-default, .alert-error, .alert-success {
   position: fixed;
   padding: 0.8em 1em;
@@ -559,6 +567,129 @@ footer a:hover {
   background-color: #6c757d;
 }
 
+.form {
+  padding: 0.8em 0.2em;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.form a {
+  margin-top: 0.5em;
+}
+
+.line {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0.4em 0;
+}
+
+.line label {
+  padding: 0.1em 0.2em;
+}
+
+.line input {
+  width: 19em;
+  height: 2.5em;
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 0.2em 0.5em;
+  border-radius: 0.25em;
+  font-size: 1em;
+}
+
+.line i {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  -webkit-transform: translate(-50% -50%);
+          transform: translate(-50% -50%);
+  font-size: 1.5em;
+}
+
+.submit {
+  margin-top: 0.8em;
+  padding: 0.5em 1.9em;
+  background-color: #008bf8;
+  color: #f1f1f1;
+  outline: none;
+  border: none;
+  font-size: 1.1em;
+  font-weight: 600;
+  border-radius: 0.25em;
+  -webkit-transition: background-color 0.25s;
+  transition: background-color 0.25s;
+}
+
+.submit:hover {
+  background-color: #006ec5;
+}
+
+#Settings {
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 2em 1em;
+}
+
+#Settings .container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+#Settings .password-container,
+#Settings .email-container {
+  background-color: rgba(219, 219, 219, 0.062);
+  padding: 0.2em;
+  width: 23em;
+  -webkit-box-shadow: 0 4px 12px 0px rgba(0, 0, 0, 0.116);
+          box-shadow: 0 4px 12px 0px rgba(0, 0, 0, 0.116);
+  padding: 0.9em 0;
+}
+
+#Settings .password-container h5,
+#Settings .email-container h5 {
+  text-align: center;
+  color: #006ec5;
+  font-size: 1.2em;
+  font-weight: 500;
+  font-family: "Ubuntu", sans-serif;
+}
+
 #Login {
   width: 100%;
   height: 100vh;
@@ -623,77 +754,6 @@ footer a:hover {
   font-size: 2.1em;
   font-weight: 700;
   font-family: "Ubuntu", sans-serif;
-}
-
-#Login .container form {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-#Login .container form .line {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  margin: 0.4em 0;
-}
-
-#Login .container form .line label {
-  padding: 0.1em 0.2em;
-}
-
-#Login .container form .line input {
-  width: 19em;
-  height: 2.5em;
-  outline: none;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  padding: 0.2em 0.5em;
-  border-radius: 0.25em;
-  font-size: 1em;
-}
-
-#Login .container form .line i {
-  position: absolute;
-  right: 5px;
-  top: 50%;
-  -webkit-transform: translate(-50% -50%);
-          transform: translate(-50% -50%);
-  font-size: 1.5em;
-}
-
-#Login .container form button {
-  margin-top: 0.8em;
-  padding: 0.5em 1.9em;
-  background-color: #008bf8;
-  color: #f1f1f1;
-  outline: none;
-  border: none;
-  font-size: 1.1em;
-  font-weight: 600;
-  border-radius: 0.25em;
-  -webkit-transition: background-color 0.25s;
-  transition: background-color 0.25s;
-}
-
-#Login .container form button:hover {
-  background-color: #006ec5;
-}
-
-#Login .container form a {
-  margin-top: 0.5em;
 }
 
 #Login .container p,
@@ -827,59 +887,6 @@ footer a:hover {
   font-size: 1em;
 }
 
-#Register .container form .line {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  margin: 0.4em 0;
-}
-
-#Register .container form .line label {
-  padding: 0.1em 0.2em;
-}
-
-#Register .container form .line input {
-  width: 19em;
-  height: 2.5em;
-  outline: none;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  padding: 0.2em 0.5em;
-  border-radius: 0.25em;
-  font-size: 1em;
-}
-
-#Register .container form .line i {
-  position: absolute;
-  right: 5px;
-  top: 50%;
-  -webkit-transform: translate(-50% -50%);
-          transform: translate(-50% -50%);
-  font-size: 1.5em;
-}
-
-#Register .container form button {
-  margin-top: 0.8em;
-  padding: 0.5em 1.9em;
-  background-color: #008bf8;
-  color: #f1f1f1;
-  outline: none;
-  border: none;
-  font-size: 1.1em;
-  font-weight: 600;
-  border-radius: 0.25em;
-  -webkit-transition: background-color 0.25s;
-  transition: background-color 0.25s;
-}
-
-#Register .container form button:hover {
-  background-color: #006ec5;
-}
-
 #Register .container p,
 #Register .container a {
   color: #111;
@@ -955,65 +962,6 @@ footer a:hover {
   font-size: 2.1em;
   font-weight: 700;
   font-family: "Ubuntu", sans-serif;
-}
-
-#Reset .container form {
-  margin-top: 2em;
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-#Reset .container form .line {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  margin: 0.4em 0;
-}
-
-#Reset .container form .line label {
-  padding: 0.1em 0.2em;
-}
-
-#Reset .container form .line input {
-  width: 19em;
-  height: 2.5em;
-  outline: none;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  padding: 0.2em 0.5em;
-  border-radius: 0.25em;
-  font-size: 1em;
-}
-
-#Reset .container form button {
-  margin-top: 0.8em;
-  padding: 0.5em 1.9em;
-  background-color: #008bf8;
-  color: #f1f1f1;
-  outline: none;
-  border: none;
-  font-size: 1.1em;
-  font-weight: 600;
-  border-radius: 0.25em;
-  -webkit-transition: background-color 0.25s;
-  transition: background-color 0.25s;
-}
-
-#Reset .container form button:hover {
-  background-color: #006ec5;
 }
 
 #Reset .container p,
@@ -1092,65 +1040,6 @@ footer a:hover {
   font-size: 2.1em;
   font-weight: 700;
   font-family: "Ubuntu", sans-serif;
-}
-
-#Password .container form {
-  margin-top: 2em;
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-#Password .container form .line {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  margin: 0.4em 0;
-}
-
-#Password .container form .line label {
-  padding: 0.1em 0.2em;
-}
-
-#Password .container form .line input {
-  width: 19em;
-  height: 2.5em;
-  outline: none;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  padding: 0.2em 0.5em;
-  border-radius: 0.25em;
-  font-size: 1em;
-}
-
-#Password .container form button {
-  margin-top: 0.8em;
-  padding: 0.5em 1.9em;
-  background-color: #008bf8;
-  color: #f1f1f1;
-  outline: none;
-  border: none;
-  font-size: 1.1em;
-  font-weight: 600;
-  border-radius: 0.25em;
-  -webkit-transition: background-color 0.25s;
-  transition: background-color 0.25s;
-}
-
-#Password .container form button:hover {
-  background-color: #006ec5;
 }
 
 #Password .container p,

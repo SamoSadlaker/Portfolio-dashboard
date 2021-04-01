@@ -8,7 +8,7 @@ $auth->aLoged();
       <img src="assets/img/logo.svg" alt="Logo">
       <h1>Login page</h1>
     </div>
-    <form id="loginForm" method="POST">
+    <form class="form" id="loginForm" method="POST">
       <p id="error"></p>
       <div class="line">
         <label for="email">Email</label>
@@ -21,7 +21,7 @@ $auth->aLoged();
         <i class='bx bxs-low-vision'></i>
       </div>
 
-      <button type="submit">Login</button>
+      <button class="submit" type="submit">Login</button>
       <a href="/reset">Forgot password?</a>
 
     </form>

@@ -76,54 +76,6 @@
                     }
                 }
             }
-
-            .line {
-                position: relative;
-                display: flex;
-                flex-direction: column;
-                margin: 0.4em 0;
-
-                label {
-                    padding: 0.1em 0.2em;
-                }
-
-                input {
-                    width: 19em;
-                    height: 2.5em;
-                    outline: none;
-                    border: 1px solid rgba(0, 0, 0, 0.2);
-                    padding: 0.2em 0.5em;
-                    @include rounded(em(4));
-                    font: {
-                        size: 1em;
-                    }
-                }
-
-                i {
-                    position: absolute;
-                    right: 5px;
-                    top: 50%;
-                    transform: translate(-50% -50%);
-                    font-size: 1.5em;
-                }
-            }
-            button {
-                margin-top: 0.8em;
-                padding: 0.5em 1.9em;
-                background-color: $color-primary;
-                color: $color-text-light;
-                outline: none;
-                border: none;
-                font: {
-                    size: 1.1em;
-                    weight: 600;
-                }
-                @include rounded(em(4));
-                transition: background-color $animation-speed;
-                &:hover {
-                    background-color: darken($color-primary, 10);
-                }
-            }
         }
 
         p,

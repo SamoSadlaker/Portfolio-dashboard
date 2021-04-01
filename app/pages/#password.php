@@ -8,7 +8,7 @@ $id = $auth->recoverPassword();
       <img src="assets/img/logo.svg" alt="Logo">
       <h1>New password</h1>
     </div>
-    <form id="passwordForm" method="POST">
+    <form class="form" id="passwordForm" method="POST">
       <p id="error"></p>
       <div class="line">
         <label for="password">New password</label>
@@ -20,7 +20,7 @@ $id = $auth->recoverPassword();
       </div>
       <input type="text" style="display: none;" name="uid" id="uid" value="<?= $id ?>">
 
-      <button type="submit">Change password</button>
+      <button class="submit" type="submit">Change password</button>
     </form>
 
   </div>

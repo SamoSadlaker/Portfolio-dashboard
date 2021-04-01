@@ -1,0 +1,34 @@
+#Settings {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em 1em;
+
+    .container {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: flex-start;
+    }
+
+    .password-container,
+    .email-container {
+        background-color: rgba(219, 219, 219, 0.062);
+        padding: 0.2em;
+        width: 23em;
+        box-shadow: 0 4px 12px 0px rgba(0, 0, 0, 0.116);
+        padding: 0.9em 0;
+        h5 {
+            text-align: center;
+            color: darken($color-primary, 10);
+            font: {
+                size: 1.2em;
+                weight: 500;
+                family: "Ubuntu", sans-serif;
+            }
+        }
+    }
+}

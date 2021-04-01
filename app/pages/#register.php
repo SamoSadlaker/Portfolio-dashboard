@@ -8,7 +8,7 @@ $auth->aLoged();
       <img src="assets/img/logo.svg" alt="Logo">
       <h1>Register page</h1>
     </div>
-    <form id="registerForm" method="POST">
+    <form class="form" id="registerForm" method="POST">
       <p id="error"></p>
       <div class="row">
         <div class="col">
@@ -38,7 +38,7 @@ $auth->aLoged();
         <i class='bx bxs-low-vision'></i>
       </div>
 
-      <button type="submit">Register</button>
+      <button class="submit" type="submit">Register</button>
 
     </form>
 

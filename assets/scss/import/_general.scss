@@ -54,3 +54,13 @@ a {
     width: calc(100% - #{$sidebar-small-width}) !important;
     margin-left: $sidebar-small-width !important;
 }
+
+.title {
+    padding: 0.8em 0;
+    color: $color-primary;
+    font: {
+        size: 2.3em;
+        weight: 600;
+        family: "Ubuntu", sans-serif;
+    }
+}
