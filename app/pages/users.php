@@ -16,26 +16,18 @@
     </thead>
     
     <tbody>
+    <?php foreach($data->getUsers() as $item) : ?>
       <tr>
-        <td>1</td>
-        <td>#adbc12</td>
-        <td>Samuel</td>
-        <td>Šadlák</td>
-        <td>samosadlaker</td>
-        <td>dev@samosadlaker.eu</td>
-        <td>Owner</td>
-        <td><i class='bx bxs-check-circle true'></i></td>
+        <td><?= $item->id ?></td>
+        <td>#<?= $item->uuid ?></td>
+        <td><?= $item->name ?></td>
+        <td><?= $item->lastname ?></td>
+        <td><?= $item->username ?></td>
+        <td><?= $item->email ?></td>
+        <td><?= $data->getPosition($item->type) ?></td>
+        <td><?= $item->verified = 1 ? "<i class='bx bxs-check-circle true'></i>" : "<i class='bx bx-error false'></i>" ?> </td>
       </tr>
-      <tr>
-        <td>1</td>
-        <td>#adbc12</td>
-        <td>Samuel</td>
-        <td>Šadlák</td>
-        <td>samosadlaker</td>
-        <td>dev@samosadlaker.eu</td>
-        <td>Owner</td>
-        <td><i class='bx bx-error false'></i></td>
-      </tr>
+      <?php endforeach; ?>
     </tbody>
   </table>
 
