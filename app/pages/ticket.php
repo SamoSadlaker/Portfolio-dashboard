@@ -14,7 +14,7 @@
     </thead>
 
     <tbody>
-    <?php foreach($data->getTickets($_SESSION['ID']) as $item) : ?>
+    <?php foreach($data->getTickets($_SESSION['id']) as $item) : ?>
       <tr>
         <td><?= $item->id ?></td>
         <td><?= $item->name ?></td>
