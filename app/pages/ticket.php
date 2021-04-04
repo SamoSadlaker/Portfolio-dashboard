@@ -1,6 +1,8 @@
 <div id="Tickets">
   <h2 class="title">Ticketlist</h2>
 
+  <a href="/newticket">Create ticket</a>
+
   <table>
     <thead>
       <tr>

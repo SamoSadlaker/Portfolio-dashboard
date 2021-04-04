@@ -31,7 +31,6 @@ $auth->isLoged();
         <li class="sidebar-item"><a href="/invoices" class="sidebar-link"><i class='bx bx-credit-card' ></i> Invoices</a></li>
         <li class="sidebar-item"><a href="/orders" class="sidebar-link"><i class='bx bx-server' ></i> Orders</a></li>
         <li class="sidebar-item"><a href="/ticket" class="sidebar-link"><i class='bx bx-receipt' ></i> Tickets</a></li>
-        <li class="sidebar-item"><a href="/todo" class="sidebar-link"><i class='bx bx-calendar-check' ></i> To-do</a></li>
       </ul>
       <div class="foot">
         <a class="settings" href="/settings"><i class='bx bx-slider-alt'></i></a>

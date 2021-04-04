@@ -5,6 +5,16 @@
     flex-direction: column;
     align-items: center;
 
+    a {
+        padding: 0.3em 0.6em;
+        background-color: $color-primary;
+        @include rounded(em(5));
+        font: {
+            size: 1.2em;
+        }
+        margin-bottom: 2em;
+    }
+
     table {
         width: 80%;
         border: none;
@@ -35,6 +45,42 @@
                 }
                 .false {
                     color: map-get($alert-colors, "error");
+                }
+            }
+        }
+    }
+}
+#Ticket {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    form {
+        width: 60%;
+        .line {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            input,
+            select,
+            textarea {
+                width: 100%;
+                height: 2.5em;
+                outline: none;
+                border: 1px solid rgba(0, 0, 0, 0.2);
+                padding: 0.2em 0.5em;
+                @include rounded(em(4));
+                font: {
+                    size: 1em;
+                }
+            }
+            textarea {
+                padding: 0.5em 0.7em;
+                max-width: 100%;
+                min-height: 5em;
+                font: {
+                    size: 1em;
+                    family: "Source Sans Pro", sans-serif;
                 }
             }
         }
