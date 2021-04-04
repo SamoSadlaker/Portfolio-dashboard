@@ -22,8 +22,7 @@ class MailController
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
             $mail->Port = $sftp->port;
 
-            $mail->setFrom($sftp->username);
-            $mail->FromName = "no-reply@samosadlaker.eu";
+            $mail->setFrom($sftp->username, "System");
             $mail->addAddress($email);
 
             $mail->isHTML(true);
@@ -54,8 +53,7 @@ class MailController
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
             $mail->Port = $sftp->port;
 
-            $mail->setFrom($sftp->username);
-            $mail->FromName = "no-reply@samosadlaker.eu";
+            $mail->setFrom($sftp->username, "System");
             $mail->addAddress($email);
 
             $mail->isHTML(true);

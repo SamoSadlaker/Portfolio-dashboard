@@ -52,7 +52,6 @@ a {
   background-color: #f1f1f1;
   margin-left: 17.5em;
   margin-top: 2.5em;
-  padding: 0.4em 0.9em;
 }
 
 .max {
@@ -823,6 +822,29 @@ footer a:hover {
 
 #Users table tbody tr .false {
   color: #fd685b;
+}
+
+#Chat {
+  width: 100%;
+  max-height: 100vh;
+  height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 25% 75%;
+      grid-template-columns: 25% 75%;
+}
+
+.list {
+  background-color: royalblue;
+  margin: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.chat {
+  background-color: salmon;
 }
 
 #Settings {

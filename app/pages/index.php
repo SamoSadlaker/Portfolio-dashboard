@@ -32,31 +32,31 @@
       <tbody>
         <tr>
           <th>UUID:</th>
-          <td>#adaw55</td>
+          <td>#<?= $_SESSION['uuid'] ?></td>
         </tr>
         <tr>
           <th>Name:</th>
-          <td>Samuel</td>
+          <td><?= $_SESSION['name'] ?></td>
         </tr>
         <tr>
           <th>Lastname:</th>
-          <td>Šadlák</td>
+          <td><?= $_SESSION['lastname'] ?></td>
         </tr>
         <tr>
           <th>Username:</th>
-          <td>samosadlaker</td>
+          <td><?= $_SESSION['username'] ?></td>
         </tr>
         <tr>
           <th>Email:</th>
-          <td>dev@samosadlaker.eu</td>
+          <td><?= $_SESSION['email'] ?></td>
         </tr>
         <tr>
           <th>Possition:</th>
-          <td>Owner</td>
+          <td><?= $data->getPosition($_SESSION['rank']) ?></td>
         </tr>
         <tr>
           <th>Verified:</th>
-          <td>true</td>
+          <td><?= $data->isVerified($_SESSION['verified']) ?></td>
         </tr>
 
       </tbody>

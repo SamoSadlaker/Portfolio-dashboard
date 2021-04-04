@@ -42,4 +42,27 @@ class DataController
             return $image_name;
         }
     }
+    public function isVerified($verified){
+        switch ($verified){
+            case 1:
+                return "true";
+                break;
+            case 0:
+                return "false";
+                break;
+        };
+    }
+    public function getPosition($type){
+        switch($type){
+            case 0:
+                return "default";
+                break;
+            case 1:
+                return "admin";
+                break;
+            case 2:
+                return "owner";
+                break;
+        }
+    }
 }
