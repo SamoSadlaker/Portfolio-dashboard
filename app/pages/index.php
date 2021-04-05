@@ -1,9 +1,15 @@
+<?php
+
+$stats = $data->getStats($_SESSION['id']);
+
+
+?>
 <div id="Index">
   <div class="info">
     <div class="badge">
       <i class='bx bxs-user-rectangle'></i>
       <div class="data">
-        <span>5</span>
+        <span><?= $stats[0] ?></span>
         <p>Users</p>
       </div>
       
@@ -11,7 +17,7 @@
     <div class="badge">
       <i class='bx bx-credit-card'></i>
       <div class="data">
-        <span>2</span>
+        <span><?= $stats[1] ?></span>
         <p>Orders</p>
       </div>
       
@@ -19,7 +25,7 @@
     <div class="badge">
       <i class='bx bx-receipt' ></i>
       <div class="data">
-        <span>4</span>
+        <span><?= $stats[2] ?></span>
         <p>Tickets</p>
       </div>
       

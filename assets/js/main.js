@@ -38,11 +38,19 @@ if (menu && sidebar && main && navbar && footer) {
 
 // Time
 var time = document.getElementById("time");
+function addZero(i) {
+    if (i < 10) {
+        i = "0" + i;
+    }
+    return i;
+}
 if (time) {
+    var date = new Date();
+    time.innerText = date.getHours() + ":" + addZero(date.getMinutes());
     setInterval(() => {
         var date = new Date();
-        time.innerText = date.getHours() + ":" + date.getMinutes();
-    }, 40);
+        time.innerText = date.getHours() + ":" + addZero(date.getMinutes());
+    }, 30000);
 }
 
 // Formfix

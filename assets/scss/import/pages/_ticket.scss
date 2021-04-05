@@ -22,7 +22,7 @@
         border-spacing: 0;
         thead tr {
             background-color: rgba(53, 53, 53, 0.445);
-            box-shadow: 0 4px 12px 0px rgba(0, 0, 0, 0.055);
+            box-shadow: 0 4px 12px 0px rgba(0, 0, 0, 0.082);
 
             line-height: 3em;
         }
@@ -69,6 +69,7 @@
                 outline: none;
                 border: 1px solid rgba(0, 0, 0, 0.2);
                 padding: 0.2em 0.5em;
+                box-shadow: 0 4px 12px 0px rgba(0, 0, 0, 0.055);
                 @include rounded(em(4));
                 font: {
                     size: 1em;
@@ -78,6 +79,7 @@
                 padding: 0.5em 0.7em;
                 max-width: 100%;
                 min-height: 5em;
+                box-shadow: 0 4px 12px 0px rgba(0, 0, 0, 0.055);
                 font: {
                     size: 1em;
                     family: "Source Sans Pro", sans-serif;

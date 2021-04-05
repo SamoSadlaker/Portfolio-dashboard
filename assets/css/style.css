@@ -795,8 +795,8 @@ footer a:hover {
 
 #Users table thead tr {
   background-color: rgba(53, 53, 53, 0.445);
-  -webkit-box-shadow: 0 4px 12px 0px rgba(0, 0, 0, 0.055);
-          box-shadow: 0 4px 12px 0px rgba(0, 0, 0, 0.055);
+  -webkit-box-shadow: 0 4px 12px 0px rgba(0, 0, 0, 0.082);
+          box-shadow: 0 4px 12px 0px rgba(0, 0, 0, 0.082);
   line-height: 3em;
 }
 
@@ -856,8 +856,8 @@ footer a:hover {
 
 #Tickets table thead tr {
   background-color: rgba(53, 53, 53, 0.445);
-  -webkit-box-shadow: 0 4px 12px 0px rgba(0, 0, 0, 0.055);
-          box-shadow: 0 4px 12px 0px rgba(0, 0, 0, 0.055);
+  -webkit-box-shadow: 0 4px 12px 0px rgba(0, 0, 0, 0.082);
+          box-shadow: 0 4px 12px 0px rgba(0, 0, 0, 0.082);
   line-height: 3em;
 }
 
@@ -921,6 +921,8 @@ footer a:hover {
   outline: none;
   border: 1px solid rgba(0, 0, 0, 0.2);
   padding: 0.2em 0.5em;
+  -webkit-box-shadow: 0 4px 12px 0px rgba(0, 0, 0, 0.055);
+          box-shadow: 0 4px 12px 0px rgba(0, 0, 0, 0.055);
   border-radius: 0.25em;
   font-size: 1em;
 }
@@ -929,6 +931,8 @@ footer a:hover {
   padding: 0.5em 0.7em;
   max-width: 100%;
   min-height: 5em;
+  -webkit-box-shadow: 0 4px 12px 0px rgba(0, 0, 0, 0.055);
+          box-shadow: 0 4px 12px 0px rgba(0, 0, 0, 0.055);
   font-size: 1em;
   font-family: "Source Sans Pro", sans-serif;
 }
