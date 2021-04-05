@@ -2,14 +2,16 @@
   <h2 class="title">Orders</h2>
 
   <div class="orders-container">
+  <?php foreach($data->getOrders($_SESSION['id']) as $item) : ?>
     <div class="card">
-      <h3>Name</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita facere</p>
+      <h3><?= $item->name ?></h3>
+      <p><?= $item->description ?></p>
       <div class="bar">
-        <p class="value">67%</p>
-        <div class="progres" style="width: 67%;"></div>
+        <p class="value"><?= $item->percentage ?>%</p>
+        <div class="progres" style="width: <?= $item->percentage ?>%;"></div>
       </div>
     </div>
+    <?php endforeach; ?>
 
   </div>
 

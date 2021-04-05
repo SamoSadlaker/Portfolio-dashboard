@@ -99,6 +99,23 @@ class DataController extends DatabaseController
             $fetch = $query->fetchAll(PDO::FETCH_OBJ);
             return $fetch;
     }
+    public function getOrders($user){
+        $query = $this->openConnection()->prepare("SELECT * FROM `orders` WHERE `user`=:id");
+        $query->bindParam(":id", $user, PDO::PARAM_INT );
+        $query->execute();
+        $alert = new AlertController();
+        $routing = new RoutingController();
+
+            if (!$query) {
+                $this->closeConnection();
+                $alert->addAlert("error", "Database error.");
+                $routing->redirect("/");
+            }
+
+            $this->closeConnection();
+            $fetch = $query->fetchAll(PDO::FETCH_OBJ);
+            return $fetch;
+    }
     public function getStats($id){
         $query = $this->openConnection()->prepare("SELECT COUNT(`id`) FROM `users` AS usersCount UNION ALL SELECT COUNT(`id`) FROM `orders` AS ordersCount UNION ALL SELECT COUNT(`id`) FROM `ticket` AS ticketsCount WHERE `from_user`= :id;");
         $query->bindParam(":id", $user, PDO::PARAM_INT );
