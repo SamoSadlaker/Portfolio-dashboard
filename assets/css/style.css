@@ -839,7 +839,7 @@ footer a:hover {
           align-items: center;
 }
 
-#Tickets a {
+#Tickets .new {
   padding: 0.3em 0.6em;
   background-color: #008bf8;
   border-radius: 0.3125em;
@@ -883,6 +883,10 @@ footer a:hover {
 
 #Tickets table tbody tr .false {
   color: #fd685b;
+}
+
+#Tickets table tbody tr a {
+  color: #111;
 }
 
 #Ticket {
