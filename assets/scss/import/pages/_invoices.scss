@@ -1,0 +1,69 @@
+#Invoices {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .invoice-container {
+        width: 92%;
+        padding: 0.8em;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        .card {
+            padding: 0.9em 1.2em;
+            width: 12em;
+            height: 15em;
+            background-color: rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            i {
+                color: #ec1c24;
+                font-size: 6em;
+            }
+            p {
+                color: $color-secondary;
+                font: {
+                    size: 1.2em;
+                    family: "Ubuntu", sans-serif;
+                }
+            }
+            a {
+                padding: 0.4em 0.8em;
+                background-color: $color-primary;
+                @include rounded(em(5));
+                transition: background-color $animation-speed;
+                &:hover {
+                    background-color: darken($color-primary, 10);
+                }
+            }
+            time {
+                color: darken($color-text-light, 50);
+                font-size: 0.9em;
+            }
+        }
+    }
+    .done {
+        position: relative;
+        &::after {
+            content: "DONE";
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: $color-text-light;
+            top: 3%;
+            right: 3%;
+            font-size: 0.8em;
+            position: absolute;
+            text-align: center;
+            width: 3em;
+            height: 3em;
+            border-radius: 50%;
+            background-color: map-get($alert-colors, "success");
+        }
+    }
+}

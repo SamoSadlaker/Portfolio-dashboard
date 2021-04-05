@@ -956,6 +956,115 @@ footer a:hover {
   background-color: salmon;
 }
 
+#Invoices {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#Invoices .invoice-container {
+  width: 92%;
+  padding: 0.8em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#Invoices .invoice-container .card {
+  padding: 0.9em 1.2em;
+  width: 12em;
+  height: 15em;
+  background-color: rgba(0, 0, 0, 0.1);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+#Invoices .invoice-container .card i {
+  color: #ec1c24;
+  font-size: 6em;
+}
+
+#Invoices .invoice-container .card p {
+  color: #1d84b5;
+  font-size: 1.2em;
+  font-family: "Ubuntu", sans-serif;
+}
+
+#Invoices .invoice-container .card a {
+  padding: 0.4em 0.8em;
+  background-color: #008bf8;
+  border-radius: 0.3125em;
+  -webkit-transition: background-color 0.25s;
+  transition: background-color 0.25s;
+}
+
+#Invoices .invoice-container .card a:hover {
+  background-color: #006ec5;
+}
+
+#Invoices .invoice-container .card time {
+  color: #727272;
+  font-size: 0.9em;
+}
+
+#Invoices .done {
+  position: relative;
+}
+
+#Invoices .done::after {
+  content: "DONE";
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #f1f1f1;
+  top: 3%;
+  right: 3%;
+  font-size: 0.8em;
+  position: absolute;
+  text-align: center;
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  background-color: #28a745;
+}
+
 #Settings {
   width: 100%;
   height: 100vh;
