@@ -1,10 +1,6 @@
 <?php
 $auth->isLoged();
-
-
- ?>
-
-
+?>
 
   <nav class="navbar" id="navbar">
     <a href="/" class="logo"><img src="assets/img/Logo.svg" alt="logo"></a>
@@ -19,7 +15,7 @@ $auth->isLoged();
     
       <div class="head">
        <p id="menu" class="menu"><i class='bx bx-menu'></i></p>
-        <img src="assets/img/profile.png" alt="" class="profile">
+        <img src="assets/img/profile/<?= $auth->getProfile($_SESSION['id'])->image ?>" alt="" class="profile">
         <p class="name"><?= $_SESSION['name'] . " " . $_SESSION['lastname'] ?></p>
         <i class='bx bx-hash uuid'></i><span id="uuid"><?= $_SESSION['uuid'] ?></span>
         <span id="active"><i class='bx bxs-check-circle'></i> Active</span>

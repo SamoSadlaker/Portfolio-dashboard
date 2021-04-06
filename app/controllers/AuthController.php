@@ -120,4 +120,19 @@ class AuthController extends DatabaseController
             header("Location: /");
         }
     }
+    public function getProfile($id){
+        $query = $this->openConnection()->prepare("SELECT `image` FROM `users` WHERE `id`=:id");
+        $query->bindParam(":id", $id, PDO::PARAM_INT);
+        $query->execute();
+        if (!$query) {
+            $this->closeConnection();
+            die(json_encode([
+                "status" => "error",
+                "message" => "Database error"
+            ]));
+        }
+        $this->closeConnection();
+        $fetch = $query->fetch(PDO::FETCH_OBJ);
+        return $fetch;
+    }
 }

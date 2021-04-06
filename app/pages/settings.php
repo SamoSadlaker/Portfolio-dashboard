@@ -36,6 +36,13 @@
     </section>
     <section class="upload-container">
       <h5>Change profile picture</h5>
+      <p id="error"></p>
+      <div class="drop-area">
+        <i class='bx bxs-cloud-upload'></i>
+        <span class="upload">You can drop image here, or</span>
+        <button id="uploadBtn">Upload image</button>
+        <input id="uploadInput" type="file" hidden>
+      </div>
       
     </section>
   </div>

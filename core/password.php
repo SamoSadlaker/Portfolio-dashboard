@@ -1,5 +1,6 @@
 <?php
-define("APP_ROOT", dirname(__DIR__) . DIRECTORY_SEPARATOR . "app". DIRECTORY_SEPARATOR);
+define("ROOT", dirname(__DIR__) . DIRECTORY_SEPARATOR);
+define("APP_ROOT", ROOT . "app". DIRECTORY_SEPARATOR);
 require_once APP_ROOT . "controllers" . DIRECTORY_SEPARATOR . "DatabaseController.php";
 require_once APP_ROOT . "controllers" . DIRECTORY_SEPARATOR . "AuthController.php";
 require_once APP_ROOT . "controllers" . DIRECTORY_SEPARATOR . "DataController.php";

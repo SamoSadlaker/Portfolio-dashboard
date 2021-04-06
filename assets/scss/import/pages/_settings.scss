@@ -51,5 +51,44 @@
                 family: "Ubuntu", sans-serif;
             }
         }
+        .drop-area {
+            width: 90%;
+            margin-top: 2em;
+            height: 9em;
+            background-color: rgba(219, 219, 219, 0.062);
+            box-shadow: 0 4px 12px 0px rgba(0, 0, 0, 0.116);
+            border: 2px dashed $color-secondary;
+            @include rounded(em(5));
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            i {
+                font-size: 3em;
+            }
+            button {
+                border: 0;
+                outline: 0;
+                padding: 0.4em 0.6em;
+                background-color: $color-primary;
+                @include rounded(em(5));
+                margin-top: 0.8em;
+                color: $color-text-light;
+                cursor: pointer;
+                transition: background-color $animation-speed;
+                &:hover {
+                    background-color: darken($color-primary, 10);
+                }
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        .active {
+            border-style: solid;
+        }
     }
 }

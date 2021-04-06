@@ -1,5 +1,6 @@
 <?php
-define("APP_ROOT", dirname(__DIR__) . DIRECTORY_SEPARATOR . "app". DIRECTORY_SEPARATOR);
+define("ROOT", dirname(__DIR__) . DIRECTORY_SEPARATOR);
+define("APP_ROOT", ROOT . "app". DIRECTORY_SEPARATOR);
 require_once APP_ROOT . "controllers" . DIRECTORY_SEPARATOR . "DatabaseController.php";
 require_once APP_ROOT . "controllers" . DIRECTORY_SEPARATOR . "AuthController.php";
 require_once APP_ROOT . "controllers" . DIRECTORY_SEPARATOR . "DataController.php";
@@ -105,7 +106,7 @@ if ($data->isAjax()) {
                 $uuid = $auth->generateStr(9);
                 $vt = $auth->generateStr(11);
                 $rt = $auth->generateStr(11);
-                $profile = $data->downloadImage("https://eu.ui-avatars.com/api/?name={$username}&background=random&color=fff&rounded=false&bold=true&format=svg");
+                $profile = $data->downloadImage("https://eu.ui-avatars.com/api/?name={$username}&background=random&color=fff&rounded=false&bold=true&format=svg", $uuid);
 
                 $query = $database->openConnection()->prepare("INSERT INTO `users` (`uuid`, `name`, `lastname`, `username`, `email`, `password`, `image`, `verification_token`, `recovery_token`) VALUES (:uuid, :name, :lastname, :username, :email, :password, :image, :verification_token, :recovery_token)");
                 $query->bindParam(":uuid", $uuid, PDO::PARAM_STR);
@@ -134,7 +135,9 @@ if ($data->isAjax()) {
                 $_SESSION["uuid"] = $uuid;
                 $_SESSION["name"] = $name;
                 $_SESSION["lastname"] = $lastname;
+                $_SESSION["username"] = $username;
                 $_SESSION["rank"] = "0";
+                $_SESSION["verified"] = "0";
                 $_SESSION["isLoged"] = true;
                 $_SESSION["email"] = $email;
                 $auth->setStatus(1);
