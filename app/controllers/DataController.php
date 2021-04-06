@@ -42,16 +42,6 @@ class DataController extends DatabaseController
             return $image_name;
         }
     }
-    public function isVerified($verified){
-        switch ($verified){
-            case 1:
-                return "true";
-                break;
-            case 0:
-                return "false";
-                break;
-        };
-    }
     public function getPosition($type){
         switch($type){
             case 0:
@@ -116,9 +106,25 @@ class DataController extends DatabaseController
             $fetch = $query->fetchAll(PDO::FETCH_OBJ);
             return $fetch;
     }
-    public function getStats($id){
-        $query = $this->openConnection()->prepare("SELECT COUNT(`id`) FROM `users` AS usersCount UNION ALL SELECT COUNT(`id`) FROM `orders` AS ordersCount UNION ALL SELECT COUNT(`id`) FROM `ticket` AS ticketsCount WHERE `from_user`= :id;");
+    public function getInvoices($user){
+        $query = $this->openConnection()->prepare("SELECT * FROM `invoice` WHERE `user`=:id");
         $query->bindParam(":id", $user, PDO::PARAM_INT );
+        $query->execute();
+        $alert = new AlertController();
+        $routing = new RoutingController();
+
+            if (!$query) {
+                $this->closeConnection();
+                $alert->addAlert("error", "Database error.");
+                $routing->redirect("/");
+            }
+
+            $this->closeConnection();
+            $fetch = $query->fetchAll(PDO::FETCH_OBJ);
+            return $fetch;
+    }
+    public function getStats(){
+        $query = $this->openConnection()->prepare("SELECT COUNT(`id`) FROM `users` UNION ALL SELECT COUNT(`id`) FROM `orders` UNION ALL SELECT COUNT(`id`) FROM `ticket`");
         $query->execute();
         $alert = new AlertController();
         $routing = new RoutingController();

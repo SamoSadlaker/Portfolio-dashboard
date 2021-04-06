@@ -1,6 +1,6 @@
 <?php
 
-$stats = $data->getStats($_SESSION['id']);
+$stats = $data->getStats();
 
 
 ?>
@@ -62,7 +62,7 @@ $stats = $data->getStats($_SESSION['id']);
         </tr>
         <tr>
           <th>Verified:</th>
-          <td><?= $data->isVerified($_SESSION['verified']) ?></td>
+          <td><?= ($_SESSION['verified'] == "1") ? "true" : "false" ?></td>
         </tr>
 
       </tbody>

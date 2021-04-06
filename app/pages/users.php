@@ -25,7 +25,7 @@
         <td><?= $item->username ?></td>
         <td><?= $item->email ?></td>
         <td><?= $data->getPosition($item->type) ?></td>
-        <td><?= $item->verified = 1 ? "<i class='bx bxs-check-circle true'></i>" : "<i class='bx bx-error false'></i>" ?> </td>
+        <td><?= $item->verified == 1 ? "<i class='bx bxs-check-circle true'></i>" : "<i class='bx bx-error false'></i>" ?> </td>
       </tr>
       <?php endforeach; ?>
     </tbody>

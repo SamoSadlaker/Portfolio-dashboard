@@ -3,18 +3,14 @@
 
 
   <div class="invoice-container">
-    <div class="card done">
+  <?php foreach($data->getInvoices($_SESSION['id']) as $item) : ?>
+    <div class="card <?= ($item->status == "1") ? "done" : " "  ?>">
       <i class='bx bxs-file-pdf'></i>
-      <p>Order #1</p>
-      <a href="#">View</a>
-      <time>15.3.2021 - 15:30</time>
+      <p><?= $item->name ?></p>
+      <a target="_blank" href="assets/docs/<?= $item->link ?>">View</a>
+      <time><?= date("d.m.Y - H:i",strtotime($item->created)) ?></time>
     </div>
-    <div class="card">
-      <i class='bx bxs-file-pdf'></i>
-      <p>Order #2</p>
-      <a href="#">View</a>
-      <time>28.3.2021 - 17:50</time>
-    </div>
+  <?php endforeach ?>
     
   </div>
  
