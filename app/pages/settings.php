@@ -4,32 +4,34 @@
   <div class="container">
     <section class="password-container">
       <h5>Change password</h5>
-      <form class="form" action="" method="post">
+      <form class="form" id="updatePassword" method="post">
+        <p id="pError"></p>
         <div class="line">
           <label for="old-password">Current password</label>
-          <input type="password" name="old-password" required placeholder="old password" id="old-password">
+          <input type="password" required placeholder="old password" id="oPassword">
         </div>
         <div class="line">
           <label for="new-password">New password</label>
-          <input type="password" name="new-password" required placeholder="new password" id="new-password">
+          <input type="password" required placeholder="new password" id="pPassword">
         </div>
         <div class="line">
           <label for="new-password-again">New password again</label>
-          <input type="password" name="new-password-again" required placeholder="new password again" id="new-password-again">
+          <input type="password" required placeholder="new password again" id="pPasswordAgain">
         </div>
         <button class="submit" type="submit">Change password</button>
       </form>
     </section>
     <section class="email-container">
       <h5>Update email</h5>
-      <form class="form" action="" method="post">
+      <form class="form" id="updateEmail" method="post">
+        <p id="eError"></p>
         <div class="line">
           <label for="email">New email</label>
-          <input type="email" name="email" required placeholder="new email" id="email">
+          <input type="email" required placeholder="new email" id="uEmail">
         </div>
         <div class="line">
           <label for="password">Password</label>
-          <input type="password" name="password" required placeholder="your password" id="password">
+          <input type="password" required placeholder="your password" id="uPassword">
         </div>
         <button class="submit" type="submit">Change email</button>
       </form>

@@ -1,3 +1,79 @@
+// UPDATE PASSWORD
+const passwordlForm = document.getElementById("updatePassword");
+const pError = document.getElementById("pError");
+
+passwordlForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("POST", "/core/updatpass.php", true);
+    xmlhttp.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+
+    var formdata = new FormData();
+    formdata.append("old", document.getElementById("oPassword").value);
+    formdata.append("password", document.getElementById("pPassword").value);
+    formdata.append("again", document.getElementById("pPasswordAgain").value);
+
+    xmlhttp.onreadystatechange = () => {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            var res = JSON.parse(xmlhttp.responseText);
+
+            switch (res.status) {
+                case "error":
+                    pError.textContent = "";
+                    popalert("error", res.message);
+                    break;
+                case "validate":
+                    eEror.textContent = "* " + res.message;
+                    break;
+
+                case "success":
+                    pError.textContent = "";
+                    popalert("success", res.message);
+                    break;
+            }
+        }
+    };
+    xmlhttp.send(formdata);
+});
+
+// UPDATE EMAIL
+const emailForm = document.getElementById("updateEmail");
+const eError = document.getElementById("eError");
+
+emailForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("POST", "/core/updateemail.php", true);
+    xmlhttp.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+
+    var formdata = new FormData();
+    formdata.append("email", document.getElementById("uEmail").value);
+    formdata.append("password", document.getElementById("uPassword").value);
+
+    xmlhttp.onreadystatechange = () => {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            var res = JSON.parse(xmlhttp.responseText);
+
+            switch (res.status) {
+                case "error":
+                    eError.textContent = "";
+                    popalert("error", res.message);
+                    break;
+                case "validate":
+                    eError.textContent = "* " + res.message;
+                    break;
+
+                case "success":
+                    eError.textContent = "";
+                    popalert("success", res.message);
+                    break;
+            }
+        }
+    };
+    xmlhttp.send(formdata);
+});
+
+// DROP UPLOAD
 const dropArea = document.querySelector(".drop-area");
 const error = document.getElementById("error");
 const text = document.querySelector(".upload");
@@ -59,10 +135,6 @@ function sendFile() {
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.open("POST", "/core/upload.php", true);
     xmlhttp.setRequestHeader("X-Requested-With", "XMLHttpRequest");
-    // xmlhttp.setRequestHeader(
-    //     "Content-type",
-    //     "application/x-www-form-urlencoded"
-    // );
 
     var formdata = new FormData();
     formdata.append("file", file);
@@ -73,12 +145,14 @@ function sendFile() {
 
             switch (res.status) {
                 case "error":
-                    rerror.textContent = "";
                     popalert("error", res.message);
                     break;
 
                 case "success":
                     popalert("success", res.message);
+                    setTimeout(() => {
+                        window.location.replace("/settings");
+                    }, 8000);
                     break;
             }
         }
