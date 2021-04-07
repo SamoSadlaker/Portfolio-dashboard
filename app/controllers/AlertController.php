@@ -21,8 +21,8 @@ class AlertController
             $_SESSION['notification'] = json_encode($array);
         } else {
             $_SESSION['notification'] = json_encode([
-              ["status" => $status, "message" => $message],
-        ]);
+                ["status" => $status, "message" => $message],
+            ]);
         }
     }
 

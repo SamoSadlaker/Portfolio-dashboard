@@ -47,7 +47,7 @@ class RoutingController
         if (file_exists(ROOT . "assets" . DIRECTORY_SEPARATOR . "js" . DIRECTORY_SEPARATOR . $page . ".js")) {
             $return = '<script src="assets/js/' . $page . '.js"></script>';
         }
-        
+
         return $return;
     }
 

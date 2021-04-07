@@ -44,7 +44,7 @@ class AuthController extends DatabaseController
         $this->setStatus(0);
         session_unset();
         session_destroy();
-        
+
         $routing = new RoutingController();
         $routing->redirect("/login");
     }
@@ -61,9 +61,9 @@ class AuthController extends DatabaseController
             if (!$query) {
                 $this->closeConnection();
                 die(json_encode([
-                "status" => "error",
-                "message" => "Database error"
-            ]));
+                    "status" => "error",
+                    "message" => "Database error"
+                ]));
             }
             $this->closeConnection();
             $fetch = $query->fetch(PDO::FETCH_OBJ);
@@ -89,9 +89,9 @@ class AuthController extends DatabaseController
             if (!$query) {
                 $this->closeConnection();
                 die(json_encode([
-                "status" => "error",
-                "message" => "Database error"
-            ]));
+                    "status" => "error",
+                    "message" => "Database error"
+                ]));
             }
             $this->closeConnection();
             $fetch = $query->fetch(PDO::FETCH_OBJ);
@@ -110,9 +110,9 @@ class AuthController extends DatabaseController
             if (!$update) {
                 $this->closeConnection();
                 die(json_encode([
-                "status" => "error",
-                "message" => "Database error"
-            ]));
+                    "status" => "error",
+                    "message" => "Database error"
+                ]));
             }
             $this->closeConnection();
             header("Location: /");
@@ -120,7 +120,8 @@ class AuthController extends DatabaseController
             header("Location: /");
         }
     }
-    public function getProfile($id){
+    public function getProfile($id)
+    {
         $query = $this->openConnection()->prepare("SELECT `image` FROM `users` WHERE `id`=:id");
         $query->bindParam(":id", $id, PDO::PARAM_INT);
         $query->execute();

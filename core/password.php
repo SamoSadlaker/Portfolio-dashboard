@@ -1,6 +1,6 @@
 <?php
 define("ROOT", dirname(__DIR__) . DIRECTORY_SEPARATOR);
-define("APP_ROOT", ROOT . "app". DIRECTORY_SEPARATOR);
+define("APP_ROOT", ROOT . "app" . DIRECTORY_SEPARATOR);
 require_once APP_ROOT . "controllers" . DIRECTORY_SEPARATOR . "DatabaseController.php";
 require_once APP_ROOT . "controllers" . DIRECTORY_SEPARATOR . "AuthController.php";
 require_once APP_ROOT . "controllers" . DIRECTORY_SEPARATOR . "DataController.php";
@@ -18,44 +18,44 @@ if ($data->isAjax()) {
 
         if ($password != $again) {
             die(json_encode([
-            "status" => "validate",
-            "message" => "The passwords you entered do not match."
-          ]));
+                "status" => "validate",
+                "message" => "The passwords you entered do not match."
+            ]));
         }
-        
+
         if (strlen($password) <= 8) {
             die(json_encode([
-                    "status" => "validate",
-                    "message" => "Your password is too short."
-                ]));
+                "status" => "validate",
+                "message" => "Your password is too short."
+            ]));
         }
 
         switch ($data->checkPassword($password)) {
-                case 'number':
-                    die(json_encode([
-                        "status" => "validate",
-                        "message" => "Your password must contain 1 number."
-                    ]));
-                    break;
-                case 'letter':
-                    die(json_encode([
-                        "status" => "validate",
-                        "message" => "Your password must contain 1 letter."
-                    ]));
-                    break;
-                case 'upper':
-                    die(json_encode([
-                        "status" => "validate",
-                        "message" => "Your password must contain 1 uppercase letter."
-                    ]));
-                    break;
-                case 'special':
-                    die(json_encode([
-                        "status" => "validate",
-                        "message" => "Your password must contain 1 special character."
-                    ]));
-                    break;
-            }
+            case 'number':
+                die(json_encode([
+                    "status" => "validate",
+                    "message" => "Your password must contain 1 number."
+                ]));
+                break;
+            case 'letter':
+                die(json_encode([
+                    "status" => "validate",
+                    "message" => "Your password must contain 1 letter."
+                ]));
+                break;
+            case 'upper':
+                die(json_encode([
+                    "status" => "validate",
+                    "message" => "Your password must contain 1 uppercase letter."
+                ]));
+                break;
+            case 'special':
+                die(json_encode([
+                    "status" => "validate",
+                    "message" => "Your password must contain 1 special character."
+                ]));
+                break;
+        }
 
         $query = $database->openConnection()->prepare("SELECT * FROM `users` WHERE `recovery_token`=:id");
         $query->bindParam(":id", $id, PDO::PARAM_STR);
@@ -73,17 +73,17 @@ if ($data->isAjax()) {
 
         if (!$fetch) {
             die(json_encode([
-            "status" => "error",
-            "message" => "Token not found"
-        ]));
+                "status" => "error",
+                "message" => "Token not found"
+            ]));
         }
         $passwordHash = $fetch->password;
 
         if (password_verify($password, $passwordHash)) {
             die(json_encode([
-            "status" => "error",
-            "message" => "The password you entered matches the current password."
-        ]));
+                "status" => "error",
+                "message" => "The password you entered matches the current password."
+            ]));
         }
         $uuid = $fetch->uuid;
 
@@ -103,15 +103,15 @@ if ($data->isAjax()) {
         if (!$update) {
             $database->closeConnection();
             return json_decode([
-                  "status" => "error",
-                  "message" => "Database error"
-              ]);
+                "status" => "error",
+                "message" => "Database error"
+            ]);
         }
         $database->closeConnection();
 
         die(json_encode([
-          "status" => "success",
-          "message" => "You suffessfully changed your password."
+            "status" => "success",
+            "message" => "You suffessfully changed your password."
         ]));
     } else {
         die(json_encode([
@@ -121,7 +121,7 @@ if ($data->isAjax()) {
     }
 } else {
     die(json_encode([
-    "status" => "error",
-    "message" => "Request is invalid."
-  ]));
+        "status" => "error",
+        "message" => "Request is invalid."
+    ]));
 }

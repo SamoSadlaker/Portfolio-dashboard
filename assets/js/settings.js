@@ -5,7 +5,7 @@ const pError = document.getElementById("pError");
 passwordlForm.addEventListener("submit", (e) => {
     e.preventDefault();
     var xmlhttp = new XMLHttpRequest();
-    xmlhttp.open("POST", "/core/updatpass.php", true);
+    xmlhttp.open("POST", "/core/updatepass.php", true);
     xmlhttp.setRequestHeader("X-Requested-With", "XMLHttpRequest");
 
     var formdata = new FormData();
@@ -23,7 +23,7 @@ passwordlForm.addEventListener("submit", (e) => {
                     popalert("error", res.message);
                     break;
                 case "validate":
-                    eEror.textContent = "* " + res.message;
+                    pError.textContent = "* " + res.message;
                     break;
 
                 case "success":

@@ -33,9 +33,9 @@ class MailController
             $mail->send();
         } catch (Exception $e) {
             die(json_encode([
-          "status" => "error",
-          "message" => $e->getMessage()
-      ]));
+                "status" => "error",
+                "message" => $e->getMessage()
+            ]));
         }
     }
 
@@ -64,9 +64,9 @@ class MailController
             $mail->send();
         } catch (Exception $e) {
             die(json_encode([
-          "status" => "error",
-          "message" => $e->getMessage()
-      ]));
+                "status" => "error",
+                "message" => $e->getMessage()
+            ]));
         }
     }
 }

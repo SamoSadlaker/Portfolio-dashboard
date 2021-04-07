@@ -1,6 +1,6 @@
 <?php
 define("ROOT", dirname(__DIR__) . DIRECTORY_SEPARATOR);
-define("APP_ROOT", ROOT . "app". DIRECTORY_SEPARATOR);
+define("APP_ROOT", ROOT . "app" . DIRECTORY_SEPARATOR);
 require_once APP_ROOT . "controllers" . DIRECTORY_SEPARATOR . "DatabaseController.php";
 require_once APP_ROOT . "controllers" . DIRECTORY_SEPARATOR . "AuthController.php";
 require_once APP_ROOT . "controllers" . DIRECTORY_SEPARATOR . "DataController.php";
@@ -39,7 +39,7 @@ if ($data->isAjax()) {
             ]));
         }
 
-        
+
 
         if (filter_var(trim($_POST['email']), FILTER_VALIDATE_EMAIL)) {
             $email = strtolower(filter_var(trim($_POST['email']), FILTER_SANITIZE_STRING));
@@ -84,24 +84,24 @@ if ($data->isAjax()) {
             $query->bindParam(":email", $email, PDO::PARAM_STR);
 
             $query->execute();
-            
+
             if (!$query) {
                 $database->closeConnection();
                 die(json_encode([
-                "status" => "error",
-                "message" => "Database error"
-            ]));
+                    "status" => "error",
+                    "message" => "Database error"
+                ]));
             }
 
-            
+
             $database->closeConnection();
             $fetch = $query->fetchColumn();
 
 
             if ($fetch != 1) {
                 $options = [
-                        "cost" => 12,
-                    ];
+                    "cost" => 12,
+                ];
                 $hash = password_hash($password, PASSWORD_BCRYPT, $options);
                 $uuid = $auth->generateStr(9);
                 $vt = $auth->generateStr(11);
@@ -124,9 +124,9 @@ if ($data->isAjax()) {
                 if (!$query) {
                     $database->closeConnection();
                     return json_decode([
-                "status" => "error",
-                "message" => "Database error"
-            ]);
+                        "status" => "error",
+                        "message" => "Database error"
+                    ]);
                 }
                 $database->closeConnection();
 
@@ -144,14 +144,14 @@ if ($data->isAjax()) {
                 $mail->sendVerifyMail($email, $name, $vt);
 
                 die(json_encode([
-                        "status" => "success",
-                        "message" => "You suffessfully registred."
-                      ]));
+                    "status" => "success",
+                    "message" => "You suffessfully registred."
+                ]));
             } else {
                 die(json_encode([
                     "status" => "error",
                     "message" => "User with this credentials is already exist."
-                  ]));
+                ]));
             }
         } else {
             die(json_encode([
@@ -167,7 +167,7 @@ if ($data->isAjax()) {
     }
 } else {
     die(json_encode([
-    "status" => "error",
-    "message" => "Request is invalid."
-  ]));
+        "status" => "error",
+        "message" => "Request is invalid."
+    ]));
 }

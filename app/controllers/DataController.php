@@ -12,15 +12,15 @@ class DataController extends DatabaseController
         if (!preg_match("#[0-9]+#", $password)) {
             $return = "number";
         }
-    
+
         if (!preg_match("#[a-z]+#", $password)) {
             $return = "letter";
         }
-    
+
         if (!preg_match("#[A-Z]+#", $password)) {
             $return = "upper";
         }
-    
+
         if (!preg_match("/[\'^£$%&*()}{@#~?><>,:|=_+!-]/", $password)) {
             $return = "special";
         }
@@ -30,9 +30,9 @@ class DataController extends DatabaseController
     public function downloadImage($url, $uuid)
     {
         $image = file_get_contents($url);
-        if($image){
+        if ($image) {
             $random = substr(sha1(rand()), 0, 8);
-            $location = ROOT . "assets" . DIRECTORY_SEPARATOR . "img" . DIRECTORY_SEPARATOR . "profile". DIRECTORY_SEPARATOR;
+            $location = ROOT . "assets" . DIRECTORY_SEPARATOR . "img" . DIRECTORY_SEPARATOR . "profile" . DIRECTORY_SEPARATOR;
             $image_name = $uuid . "_" . $random . ".svg";
 
             $save = fopen($location . $image_name, "w");
@@ -42,8 +42,9 @@ class DataController extends DatabaseController
             return $image_name;
         }
     }
-    public function getPosition($type){
-        switch($type){
+    public function getPosition($type)
+    {
+        switch ($type) {
             case 0:
                 return "Default";
                 break;
@@ -56,87 +57,92 @@ class DataController extends DatabaseController
         }
     }
 
-    public function getUsers(){
+    public function getUsers()
+    {
         $query = $this->openConnection()->prepare("SELECT `id`,`uuid`,`name`,`lastname`,`username`,`email`,`type`,`verified` FROM `users`");
         $query->execute();
         $alert = new AlertController();
         $routing = new RoutingController();
 
-            if (!$query) {
-                $this->closeConnection();
-                $alert->addAlert("error", "Database error.");
-                $routing->redirect("/");
-            }
-
+        if (!$query) {
             $this->closeConnection();
-            $fetch = $query->fetchAll(PDO::FETCH_OBJ);
-            return $fetch;
+            $alert->addAlert("error", "Database error.");
+            $routing->redirect("/");
+        }
+
+        $this->closeConnection();
+        $fetch = $query->fetchAll(PDO::FETCH_OBJ);
+        return $fetch;
     }
-    public function getTickets($user){
+    public function getTickets($user)
+    {
         $query = $this->openConnection()->prepare("SELECT * FROM `ticket` WHERE `from_user`=:id");
-        $query->bindParam(":id", $user, PDO::PARAM_INT );
+        $query->bindParam(":id", $user, PDO::PARAM_INT);
         $query->execute();
         $alert = new AlertController();
         $routing = new RoutingController();
 
-            if (!$query) {
-                $this->closeConnection();
-                $alert->addAlert("error", "Database error.");
-                $routing->redirect("/");
-            }
-
+        if (!$query) {
             $this->closeConnection();
-            $fetch = $query->fetchAll(PDO::FETCH_OBJ);
-            return $fetch;
+            $alert->addAlert("error", "Database error.");
+            $routing->redirect("/");
+        }
+
+        $this->closeConnection();
+        $fetch = $query->fetchAll(PDO::FETCH_OBJ);
+        return $fetch;
     }
-    public function getOrders($user){
+    public function getOrders($user)
+    {
         $query = $this->openConnection()->prepare("SELECT * FROM `orders` WHERE `user`=:id");
-        $query->bindParam(":id", $user, PDO::PARAM_INT );
+        $query->bindParam(":id", $user, PDO::PARAM_INT);
         $query->execute();
         $alert = new AlertController();
         $routing = new RoutingController();
 
-            if (!$query) {
-                $this->closeConnection();
-                $alert->addAlert("error", "Database error.");
-                $routing->redirect("/");
-            }
-
+        if (!$query) {
             $this->closeConnection();
-            $fetch = $query->fetchAll(PDO::FETCH_OBJ);
-            return $fetch;
+            $alert->addAlert("error", "Database error.");
+            $routing->redirect("/");
+        }
+
+        $this->closeConnection();
+        $fetch = $query->fetchAll(PDO::FETCH_OBJ);
+        return $fetch;
     }
-    public function getInvoices($user){
+    public function getInvoices($user)
+    {
         $query = $this->openConnection()->prepare("SELECT * FROM `invoice` WHERE `user`=:id");
-        $query->bindParam(":id", $user, PDO::PARAM_INT );
+        $query->bindParam(":id", $user, PDO::PARAM_INT);
         $query->execute();
         $alert = new AlertController();
         $routing = new RoutingController();
 
-            if (!$query) {
-                $this->closeConnection();
-                $alert->addAlert("error", "Database error.");
-                $routing->redirect("/");
-            }
-
+        if (!$query) {
             $this->closeConnection();
-            $fetch = $query->fetchAll(PDO::FETCH_OBJ);
-            return $fetch;
+            $alert->addAlert("error", "Database error.");
+            $routing->redirect("/");
+        }
+
+        $this->closeConnection();
+        $fetch = $query->fetchAll(PDO::FETCH_OBJ);
+        return $fetch;
     }
-    public function getStats(){
+    public function getStats()
+    {
         $query = $this->openConnection()->prepare("SELECT COUNT(`id`) FROM `users` UNION ALL SELECT COUNT(`id`) FROM `orders` UNION ALL SELECT COUNT(`id`) FROM `ticket`");
         $query->execute();
         $alert = new AlertController();
         $routing = new RoutingController();
 
-            if (!$query) {
-                $this->closeConnection();
-                $alert->addAlert("error", "Database error.");
-                $routing->redirect("/");
-            }
-
+        if (!$query) {
             $this->closeConnection();
-            $fetch = $query->fetchAll(PDO::FETCH_COLUMN);
-            return $fetch;
+            $alert->addAlert("error", "Database error.");
+            $routing->redirect("/");
+        }
+
+        $this->closeConnection();
+        $fetch = $query->fetchAll(PDO::FETCH_COLUMN);
+        return $fetch;
     }
 }
