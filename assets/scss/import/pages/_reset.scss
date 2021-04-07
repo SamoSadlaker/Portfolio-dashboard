@@ -45,6 +45,7 @@
         a {
             color: $color-text-dark;
             margin-top: 0.5em;
+            text-align: center;
         }
 
         a {
@@ -52,6 +53,13 @@
             &:hover {
                 text-decoration: underline;
             }
+        }
+    }
+}
+@media (max-width: 500px) {
+    #Reset {
+        .container {
+            width: 95%;
         }
     }
 }

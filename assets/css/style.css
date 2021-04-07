@@ -47,8 +47,7 @@ a {
 
 #Main {
   width: calc(100% - 17.5em);
-  min-height: calc(100vh - 2.5em);
-  height: 100vh;
+  min-height: 100vh;
   background-color: #f1f1f1;
   margin-left: 17.5em;
   margin-top: 2.5em;
@@ -61,6 +60,7 @@ a {
 
 .title {
   padding: 0.8em 0;
+  text-align: center;
   color: #008bf8;
   font-size: 2.3em;
   font-weight: 600;
@@ -218,6 +218,8 @@ a {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
 }
 
 .sidebar .menu {
@@ -400,6 +402,8 @@ a {
 .sidebar-mini {
   overflow: hidden;
   width: 3.75em;
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
 }
 
 .sidebar-mini .menu {
@@ -638,9 +642,17 @@ footer a:hover {
   background-color: #006ec5;
 }
 
+@media (max-width: 470px) {
+  .line {
+    width: 100%;
+  }
+  .line input {
+    width: 99%;
+  }
+}
+
 #Index {
   width: 100%;
-  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -771,9 +783,27 @@ footer a:hover {
   width: 40%;
 }
 
+@media (max-width: 700px) {
+  #Index .info {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  #Index .info .badge {
+    margin: 1em 0;
+  }
+}
+
 #Users {
   width: 100%;
-  height: 100vh;
+  padding: 2em 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -788,6 +818,7 @@ footer a:hover {
 
 #Users table {
   width: 99%;
+  padding: 0 0.8em;
   border: none;
   outline: none;
   border-spacing: 0;
@@ -824,12 +855,21 @@ footer a:hover {
   color: #fd685b;
 }
 
+@media (max-width: 780px) {
+  #Users {
+    overflow-x: scroll;
+  }
+  #Users table {
+    margin-left: 3.75em;
+  }
+}
+
 #Tickets {
   width: 100%;
-  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  padding: 2em 0;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -898,6 +938,7 @@ footer a:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  padding: 2em 0;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -950,6 +991,12 @@ footer a:hover {
           box-shadow: 0 4px 12px 0px rgba(0, 0, 0, 0.055);
   font-size: 1em;
   font-family: "Source Sans Pro", sans-serif;
+}
+
+@media (max-width: 800px) {
+  #Tickets table {
+    width: 98%;
+  }
 }
 
 #Chat {
@@ -1070,6 +1117,12 @@ footer a:hover {
           transform: translate(-50%);
 }
 
+@media (max-width: 520px) {
+  #Orders .orders-container .card {
+    width: 95%;
+  }
+}
+
 #Invoices {
   width: 100%;
   display: -webkit-box;
@@ -1185,7 +1238,6 @@ footer a:hover {
 
 #Settings {
   width: 100%;
-  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1221,6 +1273,7 @@ footer a:hover {
 #Settings .email-container {
   background-color: rgba(219, 219, 219, 0.062);
   padding: 0.2em;
+  margin: 1em;
   width: 23em;
   -webkit-box-shadow: 0 4px 12px 0px rgba(0, 0, 0, 0.116);
           box-shadow: 0 4px 12px 0px rgba(0, 0, 0, 0.116);
@@ -1237,6 +1290,7 @@ footer a:hover {
 }
 
 #Settings .upload-container {
+  margin: 1em;
   background-color: rgba(219, 219, 219, 0.062);
   padding: 0.2em;
   width: 18em;
@@ -1319,6 +1373,21 @@ footer a:hover {
   border-style: solid;
 }
 
+@media (max-width: 1000px) {
+  #Settings {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
 #Login {
   width: 100%;
   height: 100vh;
@@ -1388,6 +1457,7 @@ footer a:hover {
 #Login .container p,
 #Login .container a {
   color: #111;
+  text-align: center;
 }
 
 #Login .container a {
@@ -1396,6 +1466,12 @@ footer a:hover {
 
 #Login .container a:hover {
   text-decoration: underline;
+}
+
+@media (max-width: 500px) {
+  #Login .container {
+    width: 95%;
+  }
 }
 
 #Register {
@@ -1519,6 +1595,7 @@ footer a:hover {
 #Register .container p,
 #Register .container a {
   color: #111;
+  text-align: center;
 }
 
 #Register .container a {
@@ -1527,6 +1604,21 @@ footer a:hover {
 
 #Register .container a:hover {
   text-decoration: underline;
+}
+
+@media (max-width: 500px) {
+  #Register .container {
+    width: 95%;
+  }
+}
+
+@media (max-width: 330px) {
+  #Register .container form .row {
+    width: 100%;
+  }
+  #Register .container form .row .col input {
+    width: 99%;
+  }
 }
 
 #Reset {
@@ -1597,6 +1689,7 @@ footer a:hover {
 #Reset .container a {
   color: #111;
   margin-top: 0.5em;
+  text-align: center;
 }
 
 #Reset .container a {
@@ -1605,6 +1698,12 @@ footer a:hover {
 
 #Reset .container a:hover {
   text-decoration: underline;
+}
+
+@media (max-width: 500px) {
+  #Reset .container {
+    width: 95%;
+  }
 }
 
 #Password {
@@ -1664,6 +1763,7 @@ footer a:hover {
 
 #Password .container .head h1 {
   color: #006ec5;
+  text-align: center;
   margin-top: 0.5em;
   text-transform: uppercase;
   font-size: 2.1em;
@@ -1674,6 +1774,7 @@ footer a:hover {
 #Password .container p,
 #Password .container a {
   color: #111;
+  text-align: center;
 }
 
 #Password .container a {
@@ -1682,5 +1783,11 @@ footer a:hover {
 
 #Password .container a:hover {
   text-decoration: underline;
+}
+
+@media (max-width: 500px) {
+  #Password .container {
+    width: 95%;
+  }
 }
 /*# sourceMappingURL=style.css.map */

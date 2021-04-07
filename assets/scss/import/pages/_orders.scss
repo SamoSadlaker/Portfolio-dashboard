@@ -62,3 +62,8 @@
         }
     }
 }
+@media (max-width: 520px) {
+    #Orders .orders-container .card {
+        width: 95%;
+    }
+}

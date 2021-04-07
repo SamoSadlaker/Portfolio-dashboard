@@ -81,6 +81,7 @@
         p,
         a {
             color: $color-text-dark;
+            text-align: center;
         }
 
         a {
@@ -88,6 +89,22 @@
             &:hover {
                 text-decoration: underline;
             }
+        }
+    }
+}
+@media (max-width: 500px) {
+    #Register {
+        .container {
+            width: 95%;
+        }
+    }
+}
+
+@media (max-width: 330px) {
+    #Register .container form .row {
+        width: 100%;
+        .col input {
+            width: 99%;
         }
     }
 }

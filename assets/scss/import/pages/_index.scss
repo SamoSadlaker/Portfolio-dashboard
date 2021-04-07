@@ -1,6 +1,5 @@
 #Index {
     width: 100%;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -90,6 +89,16 @@
             td {
                 width: 40%;
             }
+        }
+    }
+}
+@media (max-width: 700px) {
+    #Index .info {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        .badge {
+            margin: 1em 0;
         }
     }
 }

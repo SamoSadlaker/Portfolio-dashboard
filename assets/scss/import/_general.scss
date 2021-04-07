@@ -43,8 +43,7 @@ a {
 }
 #Main {
     width: calc(100% - #{$sidebar-width});
-    min-height: calc(100vh - #{$navbar-height});
-    height: 100vh;
+    min-height: 100vh;
     background-color: $color-text-light;
     margin-left: $sidebar-width;
     margin-top: $navbar-height;
@@ -56,6 +55,7 @@ a {
 
 .title {
     padding: 0.8em 0;
+    text-align: center;
     color: $color-primary;
     font: {
         size: 2.3em;

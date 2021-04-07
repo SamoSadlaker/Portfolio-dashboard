@@ -46,6 +46,7 @@
         p,
         a {
             color: $color-text-dark;
+            text-align: center;
         }
 
         a {
@@ -53,6 +54,13 @@
             &:hover {
                 text-decoration: underline;
             }
+        }
+    }
+}
+@media (max-width: 500px) {
+    #Login {
+        .container {
+            width: 95%;
         }
     }
 }

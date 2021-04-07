@@ -10,6 +10,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
+    transition: all $animation-speed;
 
     .menu {
         position: absolute;
@@ -135,6 +136,7 @@
 .sidebar-mini {
     overflow: hidden;
     width: $sidebar-small-width;
+    transition: all $animation-speed;
 
     .menu {
         position: static;

@@ -34,6 +34,13 @@ if (menu && sidebar && main && navbar && footer) {
         footer.classList.toggle("max");
         // console.log(sidebar.classList.value.split(" ")[1]);
     });
+
+    if (window.innerWidth <= 600) {
+        sidebar.classList.add("sidebar-mini");
+        main.classList.add("max");
+        navbar.classList.add("max");
+        footer.classList.add("max");
+    }
 }
 
 // Time
