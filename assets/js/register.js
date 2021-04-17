@@ -31,7 +31,7 @@ register.addEventListener("submit", (e) => {
                     break;
 
                 case "success":
-                    window.location.replace("/");
+                    window.location.replace("/login");
                     break;
             }
         }

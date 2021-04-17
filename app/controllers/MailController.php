@@ -2,7 +2,7 @@
 
 use PHPMailer\PHPMailer\PHPMailer;
 
-require_once APP_ROOT . "controllers" . DIRECTORY_SEPARATOR . "phpmailer" . DIRECTORY_SEPARATOR . "PHPMAiler.php";
+require_once APP_ROOT . "controllers" . DIRECTORY_SEPARATOR . "phpmailer" . DIRECTORY_SEPARATOR . "PHPMailer.php";
 require_once APP_ROOT . "controllers" . DIRECTORY_SEPARATOR . "phpmailer" . DIRECTORY_SEPARATOR . "Exception.php";
 require_once APP_ROOT . "controllers" . DIRECTORY_SEPARATOR . "phpmailer" . DIRECTORY_SEPARATOR . "SMTP.php";
 

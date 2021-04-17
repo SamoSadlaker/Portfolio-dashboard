@@ -131,16 +131,16 @@ if ($data->isAjax()) {
                 $database->closeConnection();
 
                 session_start();
-                $_SESSION["id"] = $query->rowCount();
-                $_SESSION["uuid"] = $uuid;
-                $_SESSION["name"] = $name;
-                $_SESSION["lastname"] = $lastname;
-                $_SESSION["username"] = $username;
-                $_SESSION["rank"] = "0";
-                $_SESSION["verified"] = "0";
-                $_SESSION["isLoged"] = true;
-                $_SESSION["email"] = $email;
-                $auth->setStatus(1);
+                // $_SESSION["id"] = $query->rowCount() + 1;
+                // $_SESSION["uuid"] = $uuid;
+                // $_SESSION["name"] = $name;
+                // $_SESSION["lastname"] = $lastname;
+                // $_SESSION["username"] = $username;
+                // $_SESSION["rank"] = "0";
+                // $_SESSION["verified"] = "0";
+                // $_SESSION["isLoged"] = true;
+                // $_SESSION["email"] = $email;
+                // $auth->setStatus(1);
                 $mail->sendVerifyMail($email, $name, $vt);
 
                 die(json_encode([
